@@ -55,7 +55,7 @@ function navigation(keypressed) {
     };
     
     if (keypressed.altKey) {
-        if (keyCode == nk.save && commit_top!==null){
+        if (keyCode == kn.save && commit_top!==null){
             commit_top.click();
         }
 

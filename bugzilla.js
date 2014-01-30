@@ -1,13 +1,18 @@
-quicksearch = document.getElementById('quicksearch_top');
-comment = document.getElementById('comment');
+quicksearch = document.getElementById('quicksearch_top'); 
+// search on the top of the page
+comment = document.getElementById('comment'); 
+// comment textarea (input)
 
 severity = document.getElementById('bug_severity');
 priority = document.getElementById('priority');
  
-commit_top = document.getElementById('commit_top');
+commit_top = document.getElementById('commit_top'); 
+// save changes
 commit = document.getElementById('commit'); 
+// save comment
 
 function focusonload() { 
+// PROBLEM = I DON'T KNOW:
 // may be it should be
 // in next function?
 
@@ -19,7 +24,10 @@ function focusonload() {
     }
 
     if (comment !== null) {
-        cursorfocus(comment)
+        cursorfocus(comment) 
+		// focus on comment 
+		// textarea (input)
+		// without scrollto
     } else {
         quicksearch.focus();
     }
@@ -35,15 +43,15 @@ function navigation(keypressed) {
  
     keyCode = keypressed.keyCode || keypressed.which,
     kn = {
-        enter: 13, 
-        save: 83, 
-        down: 40, 
-        up: 38, 
-        p1: 49, 
-        p2: 50, 
-        p3: 51, 
-        p4: 52, 
-        p5: 53, 
+        enter: 13, // for save your comment
+        save: 83,  // for save bug changes 
+        down: 40,  // go to comment area
+        up: 38,    // go to search
+        p1: 49,    // priority
+        p2: 50,    // priority
+        p3: 51,    // priority
+        p4: 52,    // priority
+        p5: 53,    // priority
     };
     
     if (keypressed.altKey) {
@@ -54,20 +62,23 @@ function navigation(keypressed) {
         var key_str;
         if (priority!==null){
             switch (keyCode) {
-                case kn.p1: key_str = "P1"; break;
-                case kn.p2: key_str = "P2"; break;
-                case kn.p3: key_str = "P3"; break;
-                case kn.p4: key_str = "P4"; break;
-                case kn.p5: key_str = "P5"; break;
+                case kn.p1: key_str = "P1"; break; // - priority
+                case kn.p2: key_str = "P2"; break; // - priority
+                case kn.p3: key_str = "P3"; break; // - priority
+                case kn.p4: key_str = "P4"; break; // - priority
+                case kn.p5: key_str = "P5"; break; // - priority
             }
         }
         selectelement(priority, key_str);
         severity.focus();
+		// added focus on
+		// bug severity
 		
     } else if (keypressed.ctrlKey) {
         switch (keyCode) {
             case kn.enter:
                 if (commit!==null&&comment.value!=="") {
+				// added check for empty comment
                     commit.click();
                 }
                 break;
@@ -87,5 +98,5 @@ function navigation(keypressed) {
 
 focusonload();
 document.onkeydown = navigation;
-// how to call this functions when page
-// would be loaded at all (with window.onload)
+// PROBLEM = I DON'T KNOW: how to call this functions 
+// when page would be loaded at all (with window.onload)

@@ -1,29 +1,22 @@
-// PROBLEM = I DON'T KNOW: how to call this functions 
-// when page would be loaded at all 
-// (with window.onload)
-
 (function () {
     // make immediately invoked function expression (IIFE)
 
-    var quicksearch = document.getElementById('quicksearch_top');
+    var quick_search = document.getElementById('quicksearch_top');
     // search on the top of the page
+    var commit_top = document.getElementById('commit_top');
+    // save bug changes	on page
+
     var comment = document.getElementById('comment');
     // comment textarea (input)
+    var commit = document.getElementById('commit');
+    // save comment
 
     var severity = document.getElementById('bug_severity');
     var priority = document.getElementById('priority');
 
-    var commit_top = document.getElementById('commit_top');
-    // save changes
-    var commit = document.getElementById('commit');
-    // save comment
+    function onFocus() {
 
-    function focusonload() {
-        // PROBLEM = I DON'T KNOW:
-        // may be it should be
-        // in next function?
-
-        function cursorfocus(s) {
+        function cursorFocus(s) {
             x = window.scrollX;
             y = window.scrollY;
             s.focus();
@@ -31,16 +24,16 @@
         }
 
         if (comment !== null) {
-            cursorfocus(comment)
+            cursorFocus(comment)
             // focus on comment 
             // textarea (input)
             // without scrollto
         } else {
-            quicksearch.focus();
+            quick_search.focus();
         }
     }
 
-    function navigation(keypressed) {
+    function someNav(keypressed) {
 
         keypressed = keypressed || window.event;
 
@@ -100,8 +93,8 @@
                     }
                     break;
                 case kn.up:
-                    if (quicksearch !== null) {
-                        quicksearch.focus();
+                    if (quick_search !== null) {
+                        quick_search.focus();
                     }
                     break;
                 case kn.down:
@@ -113,7 +106,10 @@
         }
     }
 
-    focusonload();
-    document.addEventListener("keydown", navigation, true);
+    onFocus(); document.addEventListener("keydown", someNav, true);
+
+    // PROBLEM = I DON'T KNOW: how to call this functions 
+    // when page would be loaded at all 
+    // (with window.onload)
 
 })();

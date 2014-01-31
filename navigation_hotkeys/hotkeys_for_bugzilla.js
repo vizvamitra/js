@@ -40,7 +40,7 @@
 
         keypressed = keypressed || window.event;
 
-        function selectelement(w, select) {
+        function selectElement(w, select) {
             w.value = select;
         }
 
@@ -81,7 +81,7 @@
                             break;
                     }
                 }
-                selectelement(priority, key_str);
+                selectElment(priority, key_str);
                 severity.focus();
             } else if (keyCode == kn.up || keyCode == kn.down){
                 switch (keyCode){

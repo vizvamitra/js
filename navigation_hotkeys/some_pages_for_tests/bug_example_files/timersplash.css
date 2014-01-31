@@ -1,0 +1,67 @@
+/* Блок таймера */
+#timerblock {
+	display: none; 
+	color: #000000; 
+	background-color: #ADD8E6;
+	border: 1px dashed #565656;
+	border-radius: 0.5em/0.5em;
+	position: absolute;
+	right: 8px;
+	top: 77px;
+	z-index: 2;
+	padding: 5px;
+	font-family: sans-serif;
+	font-size: 14px;
+	text-align: center;
+	width:108px;
+}
+#timerblock #timer_pause {
+	position:absolute;
+	top:8px;
+	left:102px;
+	cursor:pointer;
+}
+#timerblock #timer_play {
+	position:absolute;
+	top:8px;
+	left:102px;
+	cursor:pointer;
+	visibility:hidden;
+}
+#timerblock #timer_stop {
+	position:absolute;
+	top:8px;
+	left:7px;
+	cursor:pointer;
+}
+#timerblock #timespent {
+	border: none;
+	text-align: center;
+	font-weight: bold;
+	background: transparent;
+	margin-left:6px;
+}
+
+/* Блок сохранения времени */
+#timeQuestionDiv {
+	position: fixed;
+	top: 100px;
+	left: 25%;
+	width: 50%;
+	display: none;
+	padding: 10px;
+	border: 1px solid;
+	background: #DDDDDD;
+	text-align: center;
+	font-size: 12px;
+	z-index: 10;
+}
+#timeQuestionDiv a {
+	cursor: pointer;
+}
+#timeQuestionDiv .div_show {
+	display: block;
+}
+#timeQuestionDiv .div_hide {
+	display: none;
+}

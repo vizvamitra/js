@@ -1,0 +1,409 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en"><head>
+    <title>Etersoft Bugzilla: главная страница</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="http://bugs.etersoft.ru/">
+
+  
+
+
+  
+
+
+  
+    <link rel="Условия&nbsp;отбора" title="Мои Задачи" href="http://bugs.etersoft.ru/buglist.cgi?resolution=---&amp;emailassigned_to1=1&amp;emailreporter1=1&amp;emailtype1=exact&amp;email1=dm%40etersoft.ru">
+
+    <link rel="Условие&nbsp;отбора" title="Все повседневные (lav@etersoft.ru)" href="http://bugs.etersoft.ru/buglist.cgi?cmdtype=dorem&amp;remaction=run&amp;namedcmd=%D0%92%D1%81%D0%B5%20%D0%BF%D0%BE%D0%B2%D1%81%D0%B5%D0%B4%D0%BD%D0%B5%D0%B2%D0%BD%D1%8B%D0%B5&amp;sharer_id=2">
+    <link rel="Условие&nbsp;отбора" title="Вчерашние (lav@etersoft.ru)" href="http://bugs.etersoft.ru/buglist.cgi?cmdtype=dorem&amp;remaction=run&amp;namedcmd=%D0%92%D1%87%D0%B5%D1%80%D0%B0%D1%88%D0%BD%D0%B8%D0%B5&amp;sharer_id=2">
+    <link rel="Условие&nbsp;отбора" title="Движение вчера (lav@etersoft.ru)" href="http://bugs.etersoft.ru/buglist.cgi?cmdtype=dorem&amp;remaction=run&amp;namedcmd=%D0%94%D0%B2%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%D1%87%D0%B5%D1%80%D0%B0&amp;sharer_id=2">
+    <link rel="Условие&nbsp;отбора" title="Движение сегодня (lav@etersoft.ru)" href="http://bugs.etersoft.ru/buglist.cgi?cmdtype=dorem&amp;remaction=run&amp;namedcmd=%D0%94%D0%B2%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%D0%B5%D0%B3%D0%BE%D0%B4%D0%BD%D1%8F&amp;sharer_id=2">
+    <link rel="Условие&nbsp;отбора" title="Ничейные (lav@etersoft.ru)" href="http://bugs.etersoft.ru/buglist.cgi?cmdtype=dorem&amp;remaction=run&amp;namedcmd=%D0%9D%D0%B8%D1%87%D0%B5%D0%B9%D0%BD%D1%8B%D0%B5&amp;sharer_id=2">
+    <link rel="Условие&nbsp;отбора" title="Сегодняшние (lav@etersoft.ru)" href="http://bugs.etersoft.ru/buglist.cgi?cmdtype=dorem&amp;remaction=run&amp;namedcmd=%D0%A1%D0%B5%D0%B3%D0%BE%D0%B4%D0%BD%D1%8F%D1%88%D0%BD%D0%B8%D0%B5&amp;sharer_id=2">
+
+   <link rel="Administration" title="Продукты" href="http://bugs.etersoft.ru/editproducts.cgi">
+
+
+
+    
+    
+    <link href="mainpage_example_files/global.css" rel="alternate stylesheet" title="Классическая"><link href="mainpage_example_files/global.css" rel="stylesheet" type="text/css"><link href="mainpage_example_files/index_002.css" rel="stylesheet" type="text/css"><!--[if lte IE 7]>
+      
+
+
+
+  <link href="skins/standard/IE-fixes.css" rel="stylesheet"
+        type="text/css" >
+<![endif]-->
+
+    <link href="mainpage_example_files/global_002.css" rel="stylesheet" type="text/css" title="Dusk"><link href="mainpage_example_files/index.css" rel="stylesheet" type="text/css" title="Dusk">
+
+
+    
+
+    
+
+    
+<script type="text/javascript" src="mainpage_example_files/yahoo-dom-event.js"></script><script type="text/javascript" src="mainpage_example_files/cookie-min.js"></script><script type="text/javascript" src="mainpage_example_files/global.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };                
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+            
+                attach_desc_required:
+                    'Вы должны ввести описание для этого приложения.',
+                component_required:
+                    'Вы должны выбрать компонент для этой задачи.',
+                description_required:
+                    'Вы должны ввести описание для этой задачи.',
+                short_desc_required:
+                    'Вы должны ввести аннотацию для этой задачи.',
+                version_required:
+                    'Вы должны ввести выбрать версию для этой задачи.'
+            }
+        };
+        
+    // -->
+    </script>
+
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml" title="Etersoft Bugzilla" href="http://bugs.etersoft.ru/search_plugin.cgi">
+    <link rel="shortcut icon" href="http://bugs.etersoft.ru/images/favicon.ico"><meta name="robots" content="noarchive">
+  </head>
+
+
+
+  <body onload="" class="bugs-etersoft-ru yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table id="titles" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+    <td id="title">
+      <p>Etersoft Bugzilla – Главная страница</p>
+    </td>
+
+
+    <td id="information">
+      <p class="header_addl_info">версия 4.2.6 (ru: 4.2.6)</p>
+    </td>
+</tr>
+</tbody></table>
+
+<table id="lang_links_container" cellpadding="0" cellspacing="0"><tbody><tr><td>
+  <ul class="links">
+    <li>
+      <a href="#" onclick="set_language('en');">EN</a>
+    </li>
+    <li><span class="separator"> | </span>
+      <span class="lang_current">RU</span>
+    </li>
+  </ul>
+</td></tr></tbody></table>
+<ul class="links">
+  <li><a href="http://bugs.etersoft.ru/">В начало</a></li>
+  <li><span class="separator">| </span><a href="http://bugs.etersoft.ru/enter_bug.cgi">Создать</a></li>
+  <li><span class="separator">| </span><a href="http://bugs.etersoft.ru/describecomponents.cgi">Список</a></li>
+  <li><span class="separator">| </span><a href="http://bugs.etersoft.ru/query.cgi">Поиск</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get" onsubmit="if (this.quicksearch.value == '')
+                  { alert('Введите условие поиска.');
+                    return false; } return true;">
+    <input class="txt" id="quicksearch_top" name="quicksearch" title="Быстрый поиск" type="text">
+    <input class="btn" value="Искать" id="find_top" type="submit"></form>
+  <a href="http://bugs.etersoft.ru/page.cgi?id=quicksearch.html" title="Справка по быстрому поиску">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="http://bugs.etersoft.ru/report.cgi">Отчеты</a></li>
+
+  <li></li>
+
+    <li><span class="separator">| </span><a href="http://bugs.etersoft.ru/userprefs.cgi">Параметры</a></li>
+      <li><span class="separator">| </span><a href="http://bugs.etersoft.ru/admin.cgi">Администрирование</a></li>
+
+
+    <li>
+      <span class="separator">| </span>
+        <a href="http://bugs.etersoft.ru/index.cgi?logout=1">Завершить&nbsp;сеанс</a>
+        dm@etersoft.ru</li>
+</ul>
+</div> 
+
+<div id="bugzilla-body">
+<!--<div id="message"> Мы обновили багзиллу! Если у вас есть замечания по работе новой версии, пишите в <a href="http://bugs.etersoft.ru/show_bug.cgi?id=6952">задачу 6952</a>.
+</div>-->
+
+
+<script type="text/javascript">
+<!--
+function onLoadActions() {
+  quicksearchHelpText('quicksearch_main', 'show');
+  if( window.external.AddSearchProvider ){
+    YAHOO.util.Dom.removeClass('quicksearch_plugin', 'bz_default_hidden');
+  }
+  document.getElementById('quicksearch_top').focus();
+}
+var quicksearch_message = "Введите номер задачи или текст для поиска";
+
+function checkQuicksearch( form ) {
+  if (form.quicksearch.value == '' || form.quicksearch.value == quicksearch_message ) { 
+    alert('Введите данные для поиска.');
+    return false; 
+  }
+  return true;         
+}
+
+function quicksearchHelpText(el_id, action){
+  var el = document.getElementById(el_id);
+  if ( action == "show") {
+    if( el.value == "" ) {
+      el.value = quicksearch_message
+      YAHOO.util.Dom.addClass(el, "quicksearch_help_text");
+    }
+  } else {
+    if( el.value == quicksearch_message ) {
+      el.value = "";
+      YAHOO.util.Dom.removeClass(el, "quicksearch_help_text");
+    }
+  }
+}
+YAHOO.util.Event.onDOMReady(onLoadActions);
+//-->
+</script>
+
+
+<div id="page-index">
+  <table>
+    <tbody><tr>
+      <td>
+        <h1 id="welcome"> Добро пожаловать в Etersoft Bugzilla</h1>
+        <div class="intro"></div>
+
+        <div class="bz_common_actions">
+          <ul>
+            <li>
+              <a id="enter_bug" href="http://bugs.etersoft.ru/enter_bug.cgi"><span>Зарегистрировать задачу</span></a>
+            </li>
+            <li>
+              <a id="query" href="http://bugs.etersoft.ru/query.cgi"><span>Найти</span></a>
+            </li>
+            <li>
+              <a id="account" href="http://bugs.etersoft.ru/userprefs.cgi"><span>Настройки пользователя</span></a>
+            </li>
+          </ul>
+        </div>
+
+        <form id="quicksearchForm" name="quicksearchForm" action="buglist.cgi" onsubmit="return checkQuicksearch(this);">
+          <div>
+            <input value="Введите номер задачи или текст для поиска" class="quicksearch_help_text" id="quicksearch_main" name="quicksearch" title="Быстрый поиск" onfocus="quicksearchHelpText(this.id, 'hide');" onblur="quicksearchHelpText(this.id, 'show');" type="text">
+            <input id="find" value="Найти" type="submit">
+            <ul class="additional_links" id="quicksearch_links">
+              <li>
+                <a href="http://bugs.etersoft.ru/page.cgi?id=quicksearch.html">Справка по поиску</a>
+              </li>
+              <li id="quicksearch_plugin">
+                |
+                <a href="javascript:window.external.AddSearchProvider('http://bugs.etersoft.ru/search_plugin.cgi')">
+                 Установить надстройку для быстрого поиска
+                </a>
+              </li>
+            </ul>
+            <ul class="additional_links">
+              <li>
+                <a href="http://bugs.etersoft.ru/docs/html/using.html">
+                  Руководство пользователя Etersoft Bugzilla</a>
+              </li>
+              <li>
+                |
+                <a href="http://bugs.etersoft.ru/page.cgi?id=release-notes.html">Сопроводительная записка к релизу</a>
+              </li>              
+            </ul>
+          </div>
+        </form>
+        <div class="outro"></div>
+      </td>
+    </tr>
+  </tbody></table>
+</div>
+</div>
+
+
+
+<div id="footer">
+  <div class="intro"></div>
+
+
+
+
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="http://bugs.etersoft.ru/">В начало</a></li>
+  <li><span class="separator">| </span><a href="http://bugs.etersoft.ru/enter_bug.cgi">Создать</a></li>
+  <li><span class="separator">| </span><a href="http://bugs.etersoft.ru/describecomponents.cgi">Список</a></li>
+  <li><span class="separator">| </span><a href="http://bugs.etersoft.ru/query.cgi">Поиск</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get" onsubmit="if (this.quicksearch.value == '')
+                  { alert('Введите условие поиска.');
+                    return false; } return true;">
+    <input class="txt" id="quicksearch_bottom" name="quicksearch" title="Быстрый поиск" type="text">
+    <input class="btn" value="Искать" id="find_bottom" type="submit"></form>
+  <a href="http://bugs.etersoft.ru/page.cgi?id=quicksearch.html" title="Справка по быстрому поиску">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="http://bugs.etersoft.ru/report.cgi">Отчеты</a></li>
+
+  <li></li>
+
+    <li><span class="separator">| </span><a href="http://bugs.etersoft.ru/userprefs.cgi">Параметры</a></li>
+      <li><span class="separator">| </span><a href="http://bugs.etersoft.ru/admin.cgi">Администрирование</a></li>
+
+
+    <li>
+      <span class="separator">| </span>
+        <a href="http://bugs.etersoft.ru/index.cgi?logout=1">Завершить&nbsp;сеанс</a>
+        dm@etersoft.ru</li>
+</ul>
+  </li>
+
+  
+    
+    <li id="links-saved">
+      <ul class="links">
+          <li><a href="http://bugs.etersoft.ru/buglist.cgi?resolution=---&amp;emailassigned_to1=1&amp;emailreporter1=1&amp;emailtype1=exact&amp;email1=dm%40etersoft.ru">Мои&nbsp;задачи</a></li>
+
+            <li><span class="separator">| </span>
+            <a href="http://bugs.etersoft.ru/buglist.cgi?cmdtype=runnamed&amp;namedcmd=%D0%98%D0%BD%D0%B8%D1%86%D0%B8%D0%B0%D1%82%D0%BE%D1%80">Инициатор</a></li>
+            <li><span class="separator">| </span>
+            <a href="http://bugs.etersoft.ru/buglist.cgi?cmdtype=runnamed&amp;namedcmd=%D0%9E%D1%82%D1%81%D0%BB%D0%B5%D0%B6%D0%B8%D0%B2%D0%B0%D0%B5%D0%BC%D1%8B%D0%B5">Отслеживаемые</a></li>
+            <li><span class="separator">| </span>
+            <a href="http://bugs.etersoft.ru/buglist.cgi?cmdtype=runnamed&amp;namedcmd=%D0%9F%D1%80%D0%B8%D1%91%D0%BC%D0%BA%D0%B0">Приёмка</a></li>
+            <li><span class="separator">| </span>
+            <a href="http://bugs.etersoft.ru/buglist.cgi?cmdtype=runnamed&amp;namedcmd=%D0%A0%D0%B5%D1%88%20%D0%9F%D1%80%D0%B8%20%D0%97%D0%B0%D0%BA%20%D0%92%D0%A7%D0%95%D0%A0%D0%90">Реш При Зак ВЧЕРА</a></li>
+            <li><span class="separator">| </span>
+            <a href="http://bugs.etersoft.ru/buglist.cgi?cmdtype=runnamed&amp;namedcmd=%D0%A0%D0%B5%D1%88%20%D0%9F%D1%80%D0%B8%20%D0%97%D0%B0%D0%BA%20%D0%A1%D0%95%D0%93%D0%9E%D0%94%D0%9D%D0%AF">Реш При Зак СЕГОДНЯ</a></li>
+            <br>
+          <li>
+            <a href="http://bugs.etersoft.ru/buglist.cgi?cmdtype=dorem&amp;remaction=run&amp;namedcmd=%D0%92%D1%81%D0%B5%20%D0%BF%D0%BE%D0%B2%D1%81%D0%B5%D0%B4%D0%BD%D0%B5%D0%B2%D0%BD%D1%8B%D0%B5&amp;sharer_id=2" class="shared" title="Опубликован пользователем Vitaly Lipatov &lt;lav@etersoft.ru&gt;">Все&nbsp;повседневные</a></li>
+          <li><span class="separator">| </span>
+            <a href="http://bugs.etersoft.ru/buglist.cgi?cmdtype=dorem&amp;remaction=run&amp;namedcmd=%D0%92%D1%87%D0%B5%D1%80%D0%B0%D1%88%D0%BD%D0%B8%D0%B5&amp;sharer_id=2" class="shared" title="Опубликован пользователем Vitaly Lipatov &lt;lav@etersoft.ru&gt;">Вчерашние</a></li>
+          <li><span class="separator">| </span>
+            <a href="http://bugs.etersoft.ru/buglist.cgi?cmdtype=dorem&amp;remaction=run&amp;namedcmd=%D0%94%D0%B2%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%D1%87%D0%B5%D1%80%D0%B0&amp;sharer_id=2" class="shared" title="Опубликован пользователем Vitaly Lipatov &lt;lav@etersoft.ru&gt;">Движение&nbsp;вчера</a></li>
+          <li><span class="separator">| </span>
+            <a href="http://bugs.etersoft.ru/buglist.cgi?cmdtype=dorem&amp;remaction=run&amp;namedcmd=%D0%94%D0%B2%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%D0%B5%D0%B3%D0%BE%D0%B4%D0%BD%D1%8F&amp;sharer_id=2" class="shared" title="Опубликован пользователем Vitaly Lipatov &lt;lav@etersoft.ru&gt;">Движение&nbsp;сегодня</a></li>
+          <li><span class="separator">| </span>
+            <a href="http://bugs.etersoft.ru/buglist.cgi?cmdtype=dorem&amp;remaction=run&amp;namedcmd=%D0%9D%D0%B8%D1%87%D0%B5%D0%B9%D0%BD%D1%8B%D0%B5&amp;sharer_id=2" class="shared" title="Опубликован пользователем Vitaly Lipatov &lt;lav@etersoft.ru&gt;">Ничейные</a></li>
+          <li><span class="separator">| </span>
+            <a href="http://bugs.etersoft.ru/buglist.cgi?cmdtype=dorem&amp;remaction=run&amp;namedcmd=%D0%A1%D0%B5%D0%B3%D0%BE%D0%B4%D0%BD%D1%8F%D1%88%D0%BD%D0%B8%D0%B5&amp;sharer_id=2" class="shared" title="Опубликован пользователем Vitaly Lipatov &lt;lav@etersoft.ru&gt;">Сегодняшние</a></li>
+      </ul>
+    </li>
+
+  
+<li id="links-special">
+    <script type="text/javascript">
+      <!--
+      function update_text() {
+        // 'lob' means list_of_bugs.
+        var lob_action = document.getElementById('lob_action');
+        var action = lob_action.options[lob_action.selectedIndex].value;
+        var text = document.getElementById('lob_direction');
+        var new_query_text = document.getElementById('lob_new_query_text');
+
+        if (action == "add") {
+          text.innerHTML = "to";
+          new_query_text.style.display = 'inline';
+        }
+        else {
+          text.innerHTML = "from";
+          new_query_text.style.display = 'none';
+        }
+      }
+
+      function manage_old_lists() {
+        var old_lists = document.getElementById('lob_oldqueryname');
+        // If there is no saved searches available, returns.
+        if (!old_lists) return;
+
+        var new_query = document.getElementById('lob_newqueryname').value;
+
+        if (new_query != "") {
+          old_lists.disabled = true;
+        }
+        else {
+          old_lists.disabled = false;
+        }
+      }
+      //-->
+    </script>
+
+    <div class="label"></div>
+    <ul class="links"><li class="form">
+      <form id="list_of_bugs" action="buglist.cgi" method="get">
+        <input name="cmdtype" value="doit" type="hidden">
+        <input name="remtype" value="asnamed" type="hidden">
+        <input name="list_of_bugs" value="1" type="hidden">
+        <input name="token" value="1391166917-58c29eb1273397422178d3d34aae59a2" type="hidden">        
+        <select id="lob_action" name="action" onchange="update_text();">
+          <option selected="selected" value="add">Добавить</option>
+        </select>
+
+          <a href="http://bugs.etersoft.ru/docs/html/query.html#individual-buglists">именованный список</a>
+
+        <span id="lob_new_query_text">
+          <input class="txt" id="lob_newqueryname" size="20" maxlength="64" name="newqueryname" onkeyup="manage_old_lists();" type="text">
+        </span>
+        <span id="lob_direction">из</span>
+        задач
+        <input name="bug_ids" size="12" maxlength="80" type="text">
+        <input value="Сохранить" id="commit_list_of_bugs" type="submit">
+      </form>
+    </li></ul>
+  </li>
+
+  
+</ul>
+
+  <div class="outro"></div>
+</div>
+
+
+
+</body></html>

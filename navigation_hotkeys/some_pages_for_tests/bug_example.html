@@ -1,0 +1,2523 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en"><head>
+    <title>Задача 9317 – Некорректное отображение шрифтов при обновление  W@E с 1.0 до 2.1</title>
+
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="Top" href="http://bugs.etersoft.ru/">
+
+  
+
+
+  
+    <link rel="Show" title="Дерево зависимостей" href="http://bugs.etersoft.ru/showdependencytree.cgi?id=9317&amp;hide_resolved=1">
+      <link rel="Show" title="Диаграмма зависимостей" href="http://bugs.etersoft.ru/showdependencygraph.cgi?id=9317">
+
+      <link rel="Show" title="История задачи" href="http://bugs.etersoft.ru/show_activity.cgi?id=9317">
+      <link rel="Show" title="Версия для печати" href="http://bugs.etersoft.ru/show_bug.cgi?format=multiple&amp;id=9317">
+
+
+  
+    <link rel="Условия&nbsp;отбора" title="Мои Задачи" href="http://bugs.etersoft.ru/buglist.cgi?resolution=---&amp;emailassigned_to1=1&amp;emailreporter1=1&amp;emailtype1=exact&amp;email1=dm%40etersoft.ru">
+
+    <link rel="Условие&nbsp;отбора" title="Все повседневные (lav@etersoft.ru)" href="http://bugs.etersoft.ru/buglist.cgi?cmdtype=dorem&amp;remaction=run&amp;namedcmd=%D0%92%D1%81%D0%B5%20%D0%BF%D0%BE%D0%B2%D1%81%D0%B5%D0%B4%D0%BD%D0%B5%D0%B2%D0%BD%D1%8B%D0%B5&amp;sharer_id=2">
+    <link rel="Условие&nbsp;отбора" title="Вчерашние (lav@etersoft.ru)" href="http://bugs.etersoft.ru/buglist.cgi?cmdtype=dorem&amp;remaction=run&amp;namedcmd=%D0%92%D1%87%D0%B5%D1%80%D0%B0%D1%88%D0%BD%D0%B8%D0%B5&amp;sharer_id=2">
+    <link rel="Условие&nbsp;отбора" title="Движение вчера (lav@etersoft.ru)" href="http://bugs.etersoft.ru/buglist.cgi?cmdtype=dorem&amp;remaction=run&amp;namedcmd=%D0%94%D0%B2%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%D1%87%D0%B5%D1%80%D0%B0&amp;sharer_id=2">
+    <link rel="Условие&nbsp;отбора" title="Движение сегодня (lav@etersoft.ru)" href="http://bugs.etersoft.ru/buglist.cgi?cmdtype=dorem&amp;remaction=run&amp;namedcmd=%D0%94%D0%B2%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%D0%B5%D0%B3%D0%BE%D0%B4%D0%BD%D1%8F&amp;sharer_id=2">
+    <link rel="Условие&nbsp;отбора" title="Ничейные (lav@etersoft.ru)" href="http://bugs.etersoft.ru/buglist.cgi?cmdtype=dorem&amp;remaction=run&amp;namedcmd=%D0%9D%D0%B8%D1%87%D0%B5%D0%B9%D0%BD%D1%8B%D0%B5&amp;sharer_id=2">
+    <link rel="Условие&nbsp;отбора" title="Сегодняшние (lav@etersoft.ru)" href="http://bugs.etersoft.ru/buglist.cgi?cmdtype=dorem&amp;remaction=run&amp;namedcmd=%D0%A1%D0%B5%D0%B3%D0%BE%D0%B4%D0%BD%D1%8F%D1%88%D0%BD%D0%B8%D0%B5&amp;sharer_id=2">
+
+   <link rel="Administration" title="Продукты" href="http://bugs.etersoft.ru/editproducts.cgi">
+
+
+
+    
+    
+    <link href="bug_example_files/global_002.css" rel="alternate stylesheet" title="Классическая"><link href="bug_example_files/autocomplete.css" rel="stylesheet" type="text/css"><link href="bug_example_files/calendar.css" rel="stylesheet" type="text/css"><link href="bug_example_files/global_002.css" rel="stylesheet" type="text/css"><link href="bug_example_files/show_bug.css" rel="stylesheet" type="text/css"><!--[if lte IE 7]>
+      
+
+
+
+  <link href="skins/standard/IE-fixes.css" rel="stylesheet"
+        type="text/css" >
+<![endif]-->
+
+    <link href="bug_example_files/global.css" rel="stylesheet" type="text/css" title="Dusk">
+
+
+    
+
+    
+
+                                  
+<script type="text/javascript" src="bug_example_files/yahoo-dom-event.js"></script><script type="text/javascript" src="bug_example_files/cookie-min.js"></script><script type="text/javascript" src="bug_example_files/datasource-min.js"></script><script type="text/javascript" src="bug_example_files/connection-min.js"></script><script type="text/javascript" src="bug_example_files/json-min.js"></script><script type="text/javascript" src="bug_example_files/autocomplete-min.js"></script><script type="text/javascript" src="bug_example_files/calendar-min.js"></script><script type="text/javascript" src="bug_example_files/global.js"></script>
+
+    <script type="text/javascript">
+    <!--
+        YAHOO.namespace('bugzilla');
+        YAHOO.util.Event.addListener = function (el, sType, fn, obj, overrideContext) {
+               if ( ("onpagehide" in window || YAHOO.env.ua.gecko) && sType === "unload") { sType = "pagehide"; };
+               var capture = ((sType == "focusin" || sType == "focusout") && !YAHOO.env.ua.ie) ? true : false;
+               return this._addListener(el, this._getType(sType), fn, obj, overrideContext, capture);
+         };                
+        if ( "onpagehide" in window || YAHOO.env.ua.gecko) {
+            YAHOO.util.Event._simpleRemove(window, "unload", 
+                                           YAHOO.util.Event._unload);
+        }
+        
+        function unhide_language_selector() { 
+            YAHOO.util.Dom.removeClass(
+                'lang_links_container', 'bz_default_hidden'
+            ); 
+        } 
+        YAHOO.util.Event.onDOMReady(unhide_language_selector);
+
+        
+        var BUGZILLA = {
+            param: {
+                cookiepath: '\/',
+                maxusermatches: 1000
+            },
+            constant: {
+                COMMENT_COLS: 80
+            },
+            string: {
+                
+            
+                attach_desc_required:
+                    'Вы должны ввести описание для этого приложения.',
+                component_required:
+                    'Вы должны выбрать компонент для этой задачи.',
+                description_required:
+                    'Вы должны ввести описание для этой задачи.',
+                short_desc_required:
+                    'Вы должны ввести аннотацию для этой задачи.',
+                version_required:
+                    'Вы должны ввести выбрать версию для этой задачи.'
+            }
+        };
+        
+    if( !document.location.href.match(/show_bug\.cgi/) && history && history.replaceState ) {
+      history.replaceState( null, 
+                         "Задача 9317 – Некорректное отображение шрифтов при обновление  W\x40E с 1.0 до 2.1",  
+                         "show_bug.cgi?id=9317" );
+      document.title = "Задача 9317 – Некорректное отображение шрифтов при обновление  W\x40E с 1.0 до 2.1";
+    }
+    // -->
+    </script>
+<script type="text/javascript" src="bug_example_files/util.js"></script>      <script type="text/javascript" src="bug_example_files/field.js"></script>      
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml" title="Etersoft Bugzilla" href="http://bugs.etersoft.ru/search_plugin.cgi">
+    <link rel="shortcut icon" href="http://bugs.etersoft.ru/images/favicon.ico"><meta name="robots" content="noarchive">
+  </head>
+
+
+
+  <body onload="" class="bugs-etersoft-ru bz_bug bz_status_NEW bz_product_WINE@Etersoft bz_component_Шрифты bz_bug_9317 yui-skin-sam">
+
+
+
+<div id="header">
+<div id="banner">
+  </div>
+
+<table id="titles" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+    <td id="title">
+      <p>Etersoft Bugzilla – Задача&nbsp;9317</p>
+    </td>
+
+    <td id="subtitle">
+      <p class="subheader">Некорректное отображение шрифтов при обновление  W@E с 1.0 до 2.1</p>
+    </td>
+
+    <td id="information">
+      <p class="header_addl_info">Дата последней модификации: 2013-07-04 16:03:54 MSK</p>
+    </td>
+</tr>
+</tbody></table>
+
+<table id="lang_links_container" cellpadding="0" cellspacing="0"><tbody><tr><td>
+  <ul class="links">
+    <li>
+      <a href="#" onclick="set_language('en');">EN</a>
+    </li>
+    <li><span class="separator"> | </span>
+      <span class="lang_current">RU</span>
+    </li>
+  </ul>
+</td></tr></tbody></table>
+<ul class="links">
+  <li><a href="http://bugs.etersoft.ru/">В начало</a></li>
+  <li><span class="separator">| </span><a href="http://bugs.etersoft.ru/enter_bug.cgi">Создать</a></li>
+  <li><span class="separator">| </span><a href="http://bugs.etersoft.ru/describecomponents.cgi">Список</a></li>
+  <li><span class="separator">| </span><a href="http://bugs.etersoft.ru/query.cgi">Поиск</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get" onsubmit="if (this.quicksearch.value == '')
+                  { alert('Введите условие поиска.');
+                    return false; } return true;">
+    <input class="txt" id="quicksearch_top" name="quicksearch" title="Быстрый поиск" type="text">
+    <input class="btn" value="Искать" id="find_top" type="submit"></form>
+  <a href="http://bugs.etersoft.ru/page.cgi?id=quicksearch.html" title="Справка по быстрому поиску">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="http://bugs.etersoft.ru/report.cgi">Отчеты</a></li>
+
+  <li></li>
+
+    <li><span class="separator">| </span><a href="http://bugs.etersoft.ru/userprefs.cgi">Параметры</a></li>
+      <li><span class="separator">| </span><a href="http://bugs.etersoft.ru/admin.cgi">Администрирование</a></li>
+<li>
+        <span class="separator">| </span>
+        <a href="http://bugs.etersoft.ru/docs/html/bug_page.html" target="_blank">Справка</a>
+      </li>
+
+    <li>
+      <span class="separator">| </span>
+        <a href="http://bugs.etersoft.ru/index.cgi?logout=1">Завершить&nbsp;сеанс</a>
+        dm@etersoft.ru</li>
+</ul>
+</div> 
+
+<div id="bugzilla-body">
+<!--<div id="message"> Мы обновили багзиллу! Если у вас есть замечания по работе новой версии, пишите в <a href="http://bugs.etersoft.ru/show_bug.cgi?id=6952">задачу 6952</a>.
+</div>-->
+
+<div class="navigation">
+  <b>Список задач:</b>
+
+    (1 из 8)
+
+    <a href="http://bugs.etersoft.ru/show_bug.cgi?id=9317&amp;list_id=1992">Первая</a>
+    <a href="http://bugs.etersoft.ru/show_bug.cgi?id=4&amp;list_id=1992">Последняя</a>
+
+        <i><font color="#777777">Предыдущая</font></i>
+
+        <a href="http://bugs.etersoft.ru/show_bug.cgi?id=7887&amp;list_id=1992">Следующая</a>
+
+  &nbsp;&nbsp;<a href="http://bugs.etersoft.ru/buglist.cgi?regetlastlist=1992">Показать результат последнего поиска</a>
+</div>
+<link rel="stylesheet" type="text/css" href="bug_example_files/timersplash.css">
+
+<div style="display: none;" id="useremail" class="dm@etersoft.ru"></div>
+<div style="display: none;" id="assigntoemail" class="serhio@etersoft.ru"></div>
+
+<!-- Таймер -->
+<div style="display: block;" id="timerblock" title="Время на странице">
+	<img src="bug_example_files/control_pause.gif" id="timer_pause" onclick="controlTimer()" title="Пауза">
+	<img src="bug_example_files/control_right.gif" id="timer_play" onclick="controlTimer()" title="Продолжить">
+	<img src="bug_example_files/control_stop.gif" id="timer_stop" onclick="if (confirm('Вы точно хотите сбросить таймер?')) {resetTimer();}" title="Сбросить таймер">
+	<input size="10" title="Время на странице" id="timespent" name="timespent" value="00:18:18" readonly="readonly" type="text">
+</div>
+
+<!-- Сохранение времени -->
+<div id="timeQuestionDiv">
+	<strong>Укажите отработанное время</strong>
+
+	<div name="worktimediv">
+		<nobr>Отработанное время (в минутах): 
+			<input id="realworktime" name="realworktime" onchange="update_remain();" onkeydown="javascript:if(13==event.keyCode){premysubmit(-1); return false;}; if(27==event.keyCode){getElementById('timeQuestionDiv').style.display = 'none'; return false;}" type="text">
+			<a onclick="premysubmit(-1);">Сохранить</a><p></p>
+		</nobr>
+		
+		<div id="id_remain_time" class="div_hide">Оставшееся время (в часах): 
+			<input id="realremaintime" name="realremaintime" onchange="changed_remain = 1; update_remain();" onkeydown="javascript:if(13==event.keyCode){return false;}" type="text">
+		</div>
+		
+		<div id="message" class="div_hide">
+			<p>Отслеживайте корректность оставшегося времени.</p>
+		</div>
+		
+		<div id="message_warning" class="div_hide" color="red">
+			<p>Внимание! Оставшееся время равно 0.<br>Если задача ещё не решена, то укажите необходимое для её решения время.</p>
+		</div>
+	</div>
+	<div>
+		<p><a onclick="premysubmit(-1);">Сохранить значение из поля</a></p>
+		<p><a onclick="premysubmit(5);">Сохранить 5 минут</a></p>
+		<p><a onclick="premysubmit(15);">Сохранить 15 минут</a></p>
+		<p><a onclick="premysubmit(30);">Сохранить 30 минут</a></p>
+		<p><a onclick="closeDiv();">Закрыть</a></p>
+	</div>
+</div>
+
+<script language="javascript" type="text/javascript" src="bug_example_files/timer.js"></script>
+
+<script type="text/javascript">
+<!--
+  /* Outputs a link to call replyToComment(); used to reduce HTML output */
+  function addReplyLink(id, real_id) {
+      /* XXX this should really be updated to use the DOM Core's
+       * createElement, but finding a container isn't trivial.
+       */
+        document.write('[<a href="#add_comment" onclick="replyToComment(' + 
+                       id + ',' + real_id + '); return false;">ответить<' + '/a>]');
+  }
+
+  /* Adds the reply text to the `comment' textarea */
+  function replyToComment(id, real_id) {
+      var prefix = "(В ответ на comment #" + id + ")\n";
+      var replytext = "";
+        /* pre id="comment_name_N" */
+        var text_elem = document.getElementById('comment_text_'+id);
+        var text = getText(text_elem);
+        replytext = prefix + wrapReplyText(text);
+
+      if (document.getElementById('isprivate_' + real_id).checked) {
+          document.getElementById('newcommentprivacy').checked = 'checked';
+          updateCommentTagControl(document.getElementById('newcommentprivacy'), 'comment'); 
+      }
+
+      /* <textarea id="comment"> */
+      var textarea = document.getElementById('comment');
+      textarea.value += replytext;
+
+      textarea.focus();
+  }
+
+  if (typeof Node == 'undefined') {
+      /* MSIE doesn't define Node, so provide a compatibility object */
+      window.Node = {
+          TEXT_NODE: 3,
+          ENTITY_REFERENCE_NODE: 5
+      };
+  }
+
+  /* Concatenates all text from element's childNodes. This is used
+   * instead of innerHTML because we want the actual text (and
+   * innerText is non-standard).
+   */
+  function getText(element) {
+      var child, text = "";
+      for (var i=0; i < element.childNodes.length; i++) {
+          child = element.childNodes[i];
+          var type = child.nodeType;
+          if (type == Node.TEXT_NODE || type == Node.ENTITY_REFERENCE_NODE) {
+              text += child.nodeValue;
+          } else {
+              /* recurse into nodes of other types */
+              text += getText(child);
+          }
+      }
+      return text;
+  }
+
+  var fRemainingTime = 0.00; // holds the original value
+  function adjustRemainingTime() {
+      // subtracts time spent from remaining time
+      var new_time;
+
+      // prevent negative values if work_time > fRemainingTime
+      new_time =
+          Math.max(fRemainingTime - document.changeform.work_time.value, 0.0);
+      // get upto 2 decimal places
+      document.changeform.remaining_time.value =
+          Math.round(new_time * 100)/100;
+  }
+
+  function updateRemainingTime() {
+      // if the remaining time is changed manually, update fRemainingTime
+      fRemainingTime = document.changeform.remaining_time.value;
+  }
+
+
+  /* Index all classifications so we can keep track of the classification
+   * for the selected product, which could control field visibility.
+   */
+  var all_classifications = new Array(87);
+      all_classifications['1С:Предприятие 7.7'] = 'Сторонние программы (Other programs)';
+      all_classifications['1С:Предприятие 8'] = 'Сторонние программы (Other programs)';
+      all_classifications['Alfresco'] = 'Веб-разработка (Web development)';
+      all_classifications['Apologet'] = 'Веб-разработка (Web development)';
+      all_classifications['CIFS\x40Etersoft'] = 'Продукты (Products)';
+      all_classifications['CUPS'] = 'Сторонние программы (Other programs)';
+      all_classifications['Drivers'] = 'Системы управления (Control Systems)';
+      all_classifications['EngCom'] = 'Свободные проекты (Open source projects)';
+      all_classifications['Epm'] = 'Свободные проекты (Open source projects)';
+      all_classifications['EterForceTest'] = 'Свободные проекты (Open source projects)';
+      all_classifications['EterSafe'] = 'Продукты (Products)';
+      all_classifications['Firefox'] = 'Сторонние программы (Other programs)';
+      all_classifications['Girar'] = 'Свободные проекты (Open source projects)';
+      all_classifications['HASP'] = 'Сторонние программы (Other programs)';
+      all_classifications['Imitator'] = 'Системы управления (Control Systems)';
+      all_classifications['iTalc'] = 'Свободные проекты (Open source projects)';
+      all_classifications['Korinf'] = 'Свободные проекты (Open source projects)';
+      all_classifications['LINUX\x40Etersoft'] = 'Продукты (Products)';
+      all_classifications['lyx-gost'] = 'Свободные проекты (Open source projects)';
+      all_classifications['MB22870'] = 'Системы управления (Control Systems)';
+      all_classifications['MB745'] = 'Системы управления (Control Systems)';
+      all_classifications['Ofclud\x40Etersoft'] = 'Продукты (Products)';
+      all_classifications['OFFICE\x40Etersoft'] = 'Продукты (Products)';
+      all_classifications['OpenERP'] = 'Веб-разработка (Web development)';
+      all_classifications['OpenOffice.org'] = 'Сторонние программы (Other programs)';
+      all_classifications['Plavkran'] = 'Системы управления (Control Systems)';
+      all_classifications['Postgres\x40Etersoft'] = 'Продукты (Products)';
+      all_classifications['pravtor.ru'] = 'Веб-разработка (Web development)';
+      all_classifications['RECT'] = 'Свободные проекты (Open source projects)';
+      all_classifications['rusk.ru'] = 'Веб-разработка (Web development)';
+      all_classifications['RX\x40Etersoft'] = 'Продукты (Products)';
+      all_classifications['SCADA\x40Etersoft'] = 'Системы управления (Control Systems)';
+      all_classifications['SELTA\x40Etersoft'] = 'Продукты (Products)';
+      all_classifications['Skype'] = 'Сторонние программы (Other programs)';
+      all_classifications['Stand'] = 'Системы управления (Control Systems)';
+      all_classifications['SugarCRM'] = 'Веб-разработка (Web development)';
+      all_classifications['Tartarus'] = 'Свободные проекты (Open source projects)';
+      all_classifications['TIME\x40Etersoft'] = 'Продукты (Products)';
+      all_classifications['UniOffice\x40Etersoft'] = 'Продукты (Products)';
+      all_classifications['UniSet'] = 'Системы управления (Control Systems)';
+      all_classifications['UniWidgets'] = 'Системы управления (Control Systems)';
+      all_classifications['Vargus Viewer'] = 'Свободные проекты (Open source projects)';
+      all_classifications['VirtualBox'] = 'Свободные проекты (Open source projects)';
+      all_classifications['Windows'] = 'Сторонние программы (Other programs)';
+      all_classifications['Wine Public'] = 'Свободные проекты (Open source projects)';
+      all_classifications['Wine School'] = 'Продукты (Products)';
+      all_classifications['WINE-tests'] = 'Свободные проекты (Open source projects)';
+      all_classifications['WINE\x40Etersoft'] = 'Продукты (Products)';
+      all_classifications['X-сервер'] = 'Сторонние программы (Other programs)';
+      all_classifications['Администрирование'] = 'Внутреннее (Etersoft)';
+      all_classifications['Аннулированные обращения'] = 'Прочее (Other)';
+      all_classifications['Архив документов'] = 'Веб-разработка (Web development)';
+      all_classifications['Бухгалтерия'] = 'Внутреннее (Etersoft)';
+      all_classifications['Ведомые проекты'] = 'Внутреннее (Etersoft)';
+      all_classifications['Гарант'] = 'Сторонние программы (Other programs)';
+      all_classifications['ИС Мироздание'] = 'Веб-разработка (Web development)';
+      all_classifications['Консультант+'] = 'Сторонние программы (Other programs)';
+      all_classifications['Кроссплатформенные решения'] = 'Внутреннее (Etersoft)';
+      all_classifications['Лафет'] = 'Системы управления (Control Systems)';
+      all_classifications['МПУ 745'] = 'Системы управления (Control Systems)';
+      all_classifications['Наши сайты'] = 'Внутреннее (Etersoft)';
+      all_classifications['Неразобранное'] = 'Внутреннее (Etersoft)';
+      all_classifications['Отдел веб-разработки'] = 'Внутреннее (Etersoft)';
+      all_classifications['Отдел внедрений'] = 'Внутреннее (Etersoft)';
+      all_classifications['Отдел дизайна'] = 'Внутреннее (Etersoft)';
+      all_classifications['Отдел кадров'] = 'Внутреннее (Etersoft)';
+      all_classifications['Отдел коммуникации'] = 'Внутреннее (Etersoft)';
+      all_classifications['Отдел прикладного ПО'] = 'Внутреннее (Etersoft)';
+      all_classifications['Отдел продаж'] = 'Внутреннее (Etersoft)';
+      all_classifications['Отдел продвижения'] = 'Внутреннее (Etersoft)';
+      all_classifications['Отдел разработки АСУ'] = 'Внутреннее (Etersoft)';
+      all_classifications['Отдел серверных решений'] = 'Внутреннее (Etersoft)';
+      all_classifications['Отдел снабжения'] = 'Внутреннее (Etersoft)';
+      all_classifications['Отдел тестирования'] = 'Внутреннее (Etersoft)';
+      all_classifications['Отдел техподдержки'] = 'Внутреннее (Etersoft)';
+      all_classifications['ПАРУС 7'] = 'Сторонние программы (Other programs)';
+      all_classifications['Прочие продукты'] = 'Внутреннее (Etersoft)';
+      all_classifications['Публикация документов'] = 'Веб-разработка (Web development)';
+      all_classifications['Радиотрансляция'] = 'Веб-разработка (Web development)';
+      all_classifications['Сборка пакетов'] = 'Внутреннее (Etersoft)';
+      all_classifications['Сторонние сайты'] = 'Веб-разработка (Web development)';
+      all_classifications['Театр'] = 'Системы управления (Control Systems)';
+      all_classifications['Управление ФМ'] = 'Системы управления (Control Systems)';
+      all_classifications['Хостер-панель'] = 'Веб-разработка (Web development)';
+      all_classifications['Хостинг'] = 'Внутреннее (Etersoft)';
+      all_classifications['Юридический отдел'] = 'Внутреннее (Etersoft)';
+      all_classifications['Яуза 550'] = 'Системы управления (Control Systems)';
+//-->
+</script>
+
+<form name="changeform" id="changeform" method="post" action="process_bug.cgi">
+
+  <input name="delta_ts" value="2013-07-04 16:03:54" type="hidden">
+  <input name="longdesclength" value="17" type="hidden">
+  <input name="id" value="9317" type="hidden">
+  <input name="token" value="1391165799-dffc82f14d5432f2a15b69dc144ebb28" type="hidden">
+<div class="bz_alias_short_desc_container edit_form"><div class="knob-buttons">
+      <input value="Сохранить" onclick="mysubmit();" id="commit_top" type="button">
+    </div>
+     <a href="http://bugs.etersoft.ru/show_bug.cgi?id=9317"><b>Задача&nbsp;9317</b></a> -<span id="summary_alias_container">
+      <span id="short_desc_nonedit_display">Некорректное отображение шрифтов при обновление  W@E с 1.0 до 2.1</span>
+        <small class="editme">(<a href="#" id="editme_action">Изменить</a>)</small>
+     </span>
+
+    <!-- Etersoft -->
+    &nbsp;&nbsp;<a title="Создать копию текущей задачи по основным параметрам" href="http://bugs.etersoft.ru/enter_bug.cgi?product=WINE@Etersoft&amp;component=%D0%A8%D1%80%D0%B8%D1%84%D1%82%D1%8B&amp;blocked=&amp;assigned_to=serhio@etersoft.ru&amp;cc=&amp;qa_contact=svzhu@etersoft.ru">Создать подобную</a>
+    <!-- Etersoft END -->
+
+
+    <div class="bz_default_hidden" id="summary_alias_input">
+      <table id="summary">  
+        
+        <tbody><tr>
+          <td>
+            <label accesskey="s" for="short_desc">Аннотация</label>:
+          </td>
+          <td><input id="short_desc" name="short_desc" class="text_input" value="Некорректное отображение шрифтов при обновление  W@E с 1.0 до 2.1" size="80" maxlength="255" spellcheck="true">
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+  </div>
+  <script type="text/javascript">
+    hideAliasAndSummary('Некорректное отображение шрифтов при обновление  W\x40E с 1.0 до 2.1', '');
+  </script>
+  <table class="edit_form">
+    <tbody><tr>
+      
+      <td id="bz_show_bug_column_1" class="bz_show_bug_column">     
+        <table>
+          <tbody><tr>
+    <td class="field_label">
+      <b><a href="http://bugs.etersoft.ru/page.cgi?id=fields.html#status">Состояние</a></b>:
+    </td>
+    <td id="bz_field_status">
+      <span id="static_bug_status">Новая
+          (<a href="#add_comment" onclick="window.setTimeout(function() { document.getElementById('bug_status').focus(); }, 10)">изменить</a>)
+      </span>
+    </td>
+  </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label " id="field_label_product">
+
+    <label for="product">
+
+  <a title="Задачи разделены на категории по Продуктам и их Компонентам. Для уточнения этого списка выберите классификацию." class="field_help_link" href="http://bugs.etersoft.ru/describecomponents.cgi">Продукт:</a>
+</label>
+</th>
+<td class="field_value " id="field_container_product">
+        <select id="product" name="product">          
+            <option value="1С:Предприятие 7.7" id="v36_product">1С:Предприятие 7.7</option>          
+            <option value="1С:Предприятие 8" id="v43_product">1С:Предприятие 8</option>          
+            <option value="Alfresco" id="v68_product">Alfresco</option>          
+            <option value="Apologet" id="v94_product">Apologet</option>          
+            <option value="CIFS@Etersoft" id="v28_product">CIFS@Etersoft</option>          
+            <option value="CUPS" id="v47_product">CUPS</option>          
+            <option value="Drivers" id="v71_product">Drivers</option>          
+            <option value="EngCom" id="v4_product">EngCom</option>          
+            <option value="Epm" id="v89_product">Epm</option>          
+            <option value="EterForceTest" id="v51_product">EterForceTest</option>          
+            <option value="EterSafe" id="v11_product">EterSafe</option>          
+            <option value="Firefox" id="v53_product">Firefox</option>          
+            <option value="Girar" id="v34_product">Girar</option>          
+            <option value="HASP" id="v46_product">HASP</option>          
+            <option value="Imitator" id="v2_product">Imitator</option>          
+            <option value="iTalc" id="v87_product">iTalc</option>          
+            <option value="Korinf" id="v20_product">Korinf</option>          
+            <option value="LINUX@Etersoft" id="v16_product">LINUX@Etersoft</option>          
+            <option value="lyx-gost" id="v61_product">lyx-gost</option>          
+            <option value="MB22870" id="v83_product">MB22870</option>          
+            <option value="MB745" id="v30_product">MB745</option>          
+            <option value="Ofclud@Etersoft" id="v90_product">Ofclud@Etersoft</option>          
+            <option value="OFFICE@Etersoft" id="v56_product">OFFICE@Etersoft</option>          
+            <option value="OpenERP" id="v67_product">OpenERP</option>          
+            <option value="OpenOffice.org" id="v49_product">OpenOffice.org</option>          
+            <option value="Plavkran" id="v10_product">Plavkran</option>          
+            <option value="Postgres@Etersoft" id="v19_product">Postgres@Etersoft</option>          
+            <option value="pravtor.ru" id="v42_product">pravtor.ru</option>          
+            <option value="RECT" id="v32_product">RECT</option>          
+            <option value="rusk.ru" id="v14_product">rusk.ru</option>          
+            <option value="RX@Etersoft" id="v17_product">RX@Etersoft</option>          
+            <option value="SCADA@Etersoft" id="v22_product">SCADA@Etersoft</option>          
+            <option value="SELTA@Etersoft" id="v13_product">SELTA@Etersoft</option>          
+            <option value="Skype" id="v95_product">Skype</option>          
+            <option value="Stand" id="v18_product">Stand</option>          
+            <option value="SugarCRM" id="v69_product">SugarCRM</option>          
+            <option value="Tartarus" id="v33_product">Tartarus</option>          
+            <option value="TIME@Etersoft" id="v96_product">TIME@Etersoft</option>          
+            <option value="UniOffice@Etersoft" id="v21_product">UniOffice@Etersoft</option>          
+            <option value="UniSet" id="v5_product">UniSet</option>          
+            <option value="UniWidgets" id="v60_product">UniWidgets</option>          
+            <option value="Vargus Viewer" id="v85_product">Vargus Viewer</option>          
+            <option value="VirtualBox" id="v62_product">VirtualBox</option>          
+            <option value="Windows" id="v39_product">Windows</option>          
+            <option value="Wine Public" id="v50_product">Wine Public</option>          
+            <option value="Wine School" id="v27_product">Wine School</option>          
+            <option value="WINE-tests" id="v66_product">WINE-tests</option>          
+            <option value="WINE@Etersoft" id="v1_product" selected="selected">WINE@Etersoft</option>          
+            <option value="X-сервер" id="v52_product">X-сервер</option>          
+            <option value="Администрирование" id="v7_product">Администрирование</option>          
+            <option value="Аннулированные обращения" id="v91_product">Аннулированные обращения</option>          
+            <option value="Архив документов" id="v63_product">Архив документов</option>          
+            <option value="Бухгалтерия" id="v72_product">Бухгалтерия</option>          
+            <option value="Ведомые проекты" id="v35_product">Ведомые проекты</option>          
+            <option value="Гарант" id="v58_product">Гарант</option>          
+            <option value="ИС Мироздание" id="v29_product">ИС Мироздание</option>          
+            <option value="Консультант+" id="v45_product">Консультант+</option>          
+            <option value="Кроссплатформенные решения" id="v73_product">Кроссплатформенные решения</option>          
+            <option value="Лафет" id="v93_product">Лафет</option>          
+            <option value="МПУ 745" id="v54_product">МПУ 745</option>          
+            <option value="Наши сайты" id="v44_product">Наши сайты</option>          
+            <option value="Неразобранное" id="v15_product">Неразобранное</option>          
+            <option value="Отдел веб-разработки" id="v75_product">Отдел веб-разработки</option>          
+            <option value="Отдел внедрений" id="v55_product">Отдел внедрений</option>          
+            <option value="Отдел дизайна" id="v74_product">Отдел дизайна</option>          
+            <option value="Отдел кадров" id="v76_product">Отдел кадров</option>          
+            <option value="Отдел коммуникации" id="v77_product">Отдел коммуникации</option>          
+            <option value="Отдел прикладного ПО" id="v80_product">Отдел прикладного ПО</option>          
+            <option value="Отдел продаж" id="v78_product">Отдел продаж</option>          
+            <option value="Отдел продвижения" id="v57_product">Отдел продвижения</option>          
+            <option value="Отдел разработки АСУ" id="v70_product">Отдел разработки АСУ</option>          
+            <option value="Отдел серверных решений" id="v88_product">Отдел серверных решений</option>          
+            <option value="Отдел снабжения" id="v79_product">Отдел снабжения</option>          
+            <option value="Отдел тестирования" id="v25_product">Отдел тестирования</option>          
+            <option value="Отдел техподдержки" id="v92_product">Отдел техподдержки</option>          
+            <option value="ПАРУС 7" id="v38_product">ПАРУС 7</option>          
+            <option value="Прочие продукты" id="v23_product">Прочие продукты</option>          
+            <option value="Публикация документов" id="v86_product">Публикация документов</option>          
+            <option value="Радиотрансляция" id="v40_product">Радиотрансляция</option>          
+            <option value="Сборка пакетов" id="v31_product">Сборка пакетов</option>          
+            <option value="Сторонние сайты" id="v24_product">Сторонние сайты</option>          
+            <option value="Театр" id="v65_product">Театр</option>          
+            <option value="Управление ФМ" id="v64_product">Управление ФМ</option>          
+            <option value="Хостер-панель" id="v48_product">Хостер-панель</option>          
+            <option value="Хостинг" id="v41_product">Хостинг</option>          
+            <option value="Юридический отдел" id="v81_product">Юридический отдел</option>          
+            <option value="Яуза 550" id="v59_product">Яуза 550</option>
+        </select>
+        
+
+        <script type="text/javascript">
+        <!--
+          initHidingOptionsForIE('product');
+          
+        //-->
+        </script>
+</td>
+    </tr>
+
+    
+    <tr class="bz_default_hidden"><th class="field_label " id="field_label_classification">
+
+    <label for="classification">
+
+  <a title="Задачи относятся к Разделам, Продуктам и их Компонентам. Разделы — высший уровень деления." class="field_help_link" href="http://bugs.etersoft.ru/page.cgi?id=fields.html#classification">Раздел:</a>
+</label>
+</th>
+<td class="field_value " id="field_container_classification">
+        <select id="classification" name="classification">          
+            <option value="Продукты (Products)" id="v1_classification" selected="selected">Продукты (Products)</option>          
+            <option value="Системы управления (Control Systems)" id="v3_classification">Системы управления (Control Systems)</option>          
+            <option value="Свободные проекты (Open source projects)" id="v5_classification">Свободные проекты (Open source projects)</option>          
+            <option value="Веб-разработка (Web development)" id="v4_classification">Веб-разработка (Web development)</option>          
+            <option value="Внутреннее (Etersoft)" id="v2_classification">Внутреннее (Etersoft)</option>          
+            <option value="Сторонние программы (Other programs)" id="v6_classification">Сторонние программы (Other programs)</option>          
+            <option value="Прочее (Other)" id="v7_classification">Прочее (Other)</option>
+        </select>
+        
+
+        <script type="text/javascript">
+        <!--
+          initHidingOptionsForIE('classification');
+          YAHOO.util.Event.on('product', 'change', setClassification);
+        //-->
+        </script>
+</td>
+    </tr>    
+        
+    
+    
+    <tr>
+      <th class="field_label">
+        Список:
+      </th>
+      <td>
+        <a title="Выводит список всех задач по этой компоненте" href="http://bugs.etersoft.ru/buglist.cgi?product=WINE@Etersoft&amp;component=WINE@Etersoft&amp;component=%D0%A8%D1%80%D0%B8%D1%84%D1%82%D1%8B">Вывести</a>
+      </td>
+    </tr>
+    <tr><th class="field_label " id="field_label_component">
+
+    <label for="component">
+
+  <a title="Компоненты — категории второго уровня; каждая принадлежит к определенному продукту. Выберите продукт для сужения списка компонентов." class="field_help_link" href="http://bugs.etersoft.ru/describecomponents.cgi?product=WINE@Etersoft">Компонент:</a>
+</label>
+</th>
+<td class="field_value " id="field_container_component">
+        <select id="component" name="component">          
+            <option value="3D-графика; GL; DirectX" id="v92_component">3D-графика; GL; DirectX</option>          
+            <option value="Delphi" id="v56_component">Delphi</option>          
+            <option value="DOS-программы" id="v149_component">DOS-программы</option>          
+            <option value="dotNET; .NET; mono" id="v122_component">dotNET; .NET; mono</option>          
+            <option value="GDI / DIB / GDIPLUS ; графика" id="v143_component">GDI / DIB / GDIPLUS ; графика</option>          
+            <option value="Internet Explorer / Gecko" id="v63_component">Internet Explorer / Gecko</option>          
+            <option value="Media Player" id="v134_component">Media Player</option>          
+            <option value="OLE / DDE / RPC" id="v157_component">OLE / DDE / RPC</option>          
+            <option value="WineGUI" id="v167_component">WineGUI</option>          
+            <option value="Взаимодействие с Office" id="v22_component">Взаимодействие с Office</option>          
+            <option value="Выпуск релизов" id="v236_component">Выпуск релизов</option>          
+            <option value="Дистрибутив" id="v154_component">Дистрибутив</option>          
+            <option value="Документация, текст релиза" id="v246_component">Документация, текст релиза</option>          
+            <option value="Должностные" id="v371_component">Должностные</option>          
+            <option value="Запуск ; Отладка ; Исключения" id="v192_component">Запуск ; Отладка ; Исключения</option>          
+            <option value="Интеграция в хост-систему" id="v152_component">Интеграция в хост-систему</option>          
+            <option value="Ключи защиты ; Системы защиты ; Файл лицензии" id="v140_component">Ключи защиты ; Системы защиты ; Файл лицензии</option>          
+            <option value="Консоль ; Вызов программ" id="v46_component">Консоль ; Вызов программ</option>          
+            <option value="Контролы" id="v358_component">Контролы</option>          
+            <option value="Оборудование ; Драйвера" id="v85_component">Оборудование ; Драйвера</option>          
+            <option value="Обработка текста и локали; Буфер" id="v146_component">Обработка текста и локали; Буфер</option>          
+            <option value="Общее" id="v5_component">Общее</option>          
+            <option value="Окна / фокус / перерисовка" id="v145_component">Окна / фокус / перерисовка</option>          
+            <option value="Печать ; Диалог печати" id="v144_component">Печать ; Диалог печати</option>          
+            <option value="Сетевые возможности ; TCP/IP" id="v151_component">Сетевые возможности ; TCP/IP</option>          
+            <option value="Сетевые файловые системы" id="v141_component">Сетевые файловые системы</option>          
+            <option value="Собирательные" id="v359_component">Собирательные</option>          
+            <option value="Стандартные диалоги" id="v208_component">Стандартные диалоги</option>          
+            <option value="Статистика" id="v393_component">Статистика</option>          
+            <option value="Установка программ / MSI" id="v147_component">Установка программ / MSI</option>          
+            <option value="Файловые операции" id="v150_component">Файловые операции</option>          
+            <option value="Шифрование / ЭЦП" id="v155_component">Шифрование / ЭЦП</option>          
+            <option value="Шрифты" id="v148_component" selected="selected">Шрифты</option>
+        </select>
+        
+
+        <script type="text/javascript">
+        <!--
+          initHidingOptionsForIE('component');
+          
+        //-->
+        </script>
+</td>
+    </tr>
+    <tr>
+      <td class="field_label">
+        <label for="version"><b>Версия</b></label>:
+      </td>
+<td>
+      <select id="version" name="version">        
+          <option value="-">-
+          </option>        
+          <option value="0.9m">0.9m
+          </option>        
+          <option value="0.91m">0.91m
+          </option>        
+          <option value="1.0">1.0
+          </option>        
+          <option value="1.0.1">1.0.1
+          </option>        
+          <option value="1.0.2">1.0.2
+          </option>        
+          <option value="1.0.3">1.0.3
+          </option>        
+          <option value="1.0.4">1.0.4
+          </option>        
+          <option value="1.0.5">1.0.5
+          </option>        
+          <option value="1.0.6">1.0.6
+          </option>        
+          <option value="1.0.7">1.0.7
+          </option>        
+          <option value="1.0.8">1.0.8
+          </option>        
+          <option value="1.0.9">1.0.9
+          </option>        
+          <option value="1.0.10">1.0.10
+          </option>        
+          <option value="1.0.11">1.0.11
+          </option>        
+          <option value="1.0.12">1.0.12
+          </option>        
+          <option value="1.1">1.1
+          </option>        
+          <option value="1.7">1.7
+          </option>        
+          <option value="1.8">1.8
+          </option>        
+          <option value="2.0">2.0
+          </option>        
+          <option value="2.1">2.1
+          </option>        
+          <option value="unspecified" selected="selected">unspecified
+          </option>
+      </select>
+  </td>
+    </tr>
+        
+    
+        
+    <tr>
+      <td class="field_label">
+        <label for="rep_platform" accesskey="h"><b>Платформа</b></label>:
+      </td>
+      <td class="field_value"><select id="rep_platform" name="rep_platform">          
+            <option value="All" id="v1_rep_platform">Любая</option>          
+            <option value="PC" id="v2_rep_platform" selected="selected">PC</option>          
+            <option value="Macintosh" id="v3_rep_platform">Macintosh</option>          
+            <option value="Other" id="v4_rep_platform">Другая</option>
+        </select>
+        
+
+        <script type="text/javascript">
+        <!--
+          initHidingOptionsForIE('rep_platform');
+          
+        //-->
+        </script>
+       <select id="op_sys" name="op_sys">          
+            <option value="All" id="v1_op_sys" selected="selected">Любая</option>          
+            <option value="Linux" id="v2_op_sys">Linux</option>          
+            <option value="SUSE" id="v13_op_sys">SUSE</option>          
+            <option value="ALT Linux" id="v3_op_sys">ALT Linux</option>          
+            <option value="ASP Linux" id="v10_op_sys">ASP Linux</option>          
+            <option value="Ubuntu" id="v9_op_sys">Ubuntu</option>          
+            <option value="FreeBSD" id="v6_op_sys">FreeBSD</option>          
+            <option value="Mandriva" id="v11_op_sys">Mandriva</option>          
+            <option value="Fedora" id="v14_op_sys">Fedora</option>          
+            <option value="Debian GNU/Linux" id="v7_op_sys">Debian GNU/Linux</option>          
+            <option value="Gentoo" id="v12_op_sys">Gentoo</option>          
+            <option value="ArchLinux" id="v19_op_sys">ArchLinux</option>          
+            <option value="CentOS/RHEL/Scientific" id="v18_op_sys">CentOS/RHEL/Scientific</option>          
+            <option value="LinuxXP" id="v20_op_sys">LinuxXP</option>          
+            <option value="MOPSLinux/Slackware" id="v17_op_sys">MOPSLinux/Slackware</option>          
+            <option value="PCLinux" id="v21_op_sys">PCLinux</option>          
+            <option value="Other" id="v8_op_sys">Другая</option>          
+            <option value="Solaris" id="v24_op_sys">Solaris</option>          
+            <option value="MacOS X" id="v5_op_sys">MacOS X</option>          
+            <option value="MCBC" id="v23_op_sys">MCBC</option>          
+            <option value="Windows" id="v4_op_sys">Windows</option>
+        </select>
+        
+
+        <script type="text/javascript">
+        <!--
+          initHidingOptionsForIE('op_sys');
+          
+        //-->
+        </script>
+       <script type="text/javascript">
+         assignToDefaultOnChange(['product', 'component']);
+       </script>
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr>
+      <td class="field_label">
+        <label for="priority" accesskey="i">
+          <b><a href="http://bugs.etersoft.ru/page.cgi?id=fields.html#importance">Важность</a></b></label>:
+      </td>
+      <td><select id="priority" name="priority">          
+            <option value="P1" id="v1_priority">P1</option>          
+            <option value="P2" id="v2_priority" selected="selected">P2</option>          
+            <option value="P3" id="v3_priority">P3</option>          
+            <option value="P4" id="v4_priority">P4</option>          
+            <option value="P5" id="v5_priority">P5</option>
+        </select>
+        
+
+        <script type="text/javascript">
+        <!--
+          initHidingOptionsForIE('priority');
+          
+        //-->
+        </script>
+       <select id="bug_severity" name="bug_severity">          
+            <option value="blocker" id="v1_bug_severity">Чрезвычайная</option>          
+            <option value="critical" id="v2_bug_severity">Критическая</option>          
+            <option value="major" id="v3_bug_severity">Серьёзная</option>          
+            <option value="normal" id="v4_bug_severity" selected="selected">Существенная</option>          
+            <option value="minor" id="v5_bug_severity">Незначительная</option>          
+            <option value="trivial" id="v6_bug_severity">Тривиальная</option>          
+            <option value="enhancement" id="v7_bug_severity">Пожелание</option>
+        </select>
+        
+
+        <script type="text/javascript">
+        <!--
+          initHidingOptionsForIE('bug_severity');
+          
+        //-->
+        </script>
+      </td>
+    </tr>            
+          
+          <tr>
+      <td class="field_label">
+        <b><a href="http://bugs.etersoft.ru/page.cgi?id=fields.html#assigned_to">Исполнитель</a></b>:
+      </td>
+      <td>
+          <div class="" id="bz_assignee_edit_container">
+            <span><span class="vcard"><a class="email" href="mailto:serhio@etersoft.ru" title="Сергей Гуральник &lt;serhio@etersoft.ru&gt;"> <span class="fn">Сергей Гуральник</span></a>
+</span>
+              (<a href="#" id="bz_assignee_edit_action">изменить</a>)
+                (<a title="Назначить себя исполнителем" href="#" id="bz_assignee_take_action">взять</a>)              
+            </span>
+          </div>
+          <div class="bz_default_hidden" id="bz_assignee_input"><div id="assigned_to_autocomplete" class="bz_userfield yui-ac">  
+  <input autocomplete="on" name="assigned_to" value="serhio@etersoft.ru" class="bz_userfield yui-ac-input" size="30" id="assigned_to">
+    <div class="yui-ac-container" id="assigned_to_autocomplete_container"><div style="display: none;" class="yui-ac-content"><div style="display: none;" class="yui-ac-hd"></div><div class="yui-ac-bd"><ul><li style="display: none;"></li><li style="display: none;"></li><li style="display: none;"></li><li style="display: none;"></li><li style="display: none;"></li><li style="display: none;"></li><li style="display: none;"></li><li style="display: none;"></li><li style="display: none;"></li><li style="display: none;"></li></ul></div><div style="display: none;" class="yui-ac-ft"></div></div></div>
+    </div>  
+    <script type="text/javascript">
+      if( typeof(YAHOO.bugzilla.userAutocomplete) !== 'undefined' 
+          && YAHOO.bugzilla.userAutocomplete != null){
+        YAHOO.bugzilla.userAutocomplete.init( "assigned_to", 
+                    "assigned_to_autocomplete_container");        
+      }
+    </script>
+            <br>
+            <input id="set_default_assignee" name="set_default_assignee" value="1" type="checkbox">
+            <label style="font-weight: normal;" id="set_default_assignee_label" for="set_default_assignee">Вернуть исполнителю по умолчанию</label>
+          </div>
+          <script type="text/javascript">
+           hideEditableField('bz_assignee_edit_container', 
+                             'bz_assignee_input', 
+                             'bz_assignee_edit_action', 
+                             'assigned_to', 
+                             'serhio\x40etersoft.ru' );
+           hideEditableField('bz_assignee_edit_container',
+                             'bz_assignee_input',
+                             'bz_assignee_take_action',
+                             'assigned_to',
+                             'serhio\x40etersoft.ru',
+                             'dm\x40etersoft.ru' );                             
+           initDefaultCheckbox('assignee');                  
+          </script>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="field_label">
+        <label for="qa_contact" accesskey="q"><b>Приёмка</b></label>:
+      </td>
+      <td>
+           <div id="bz_qa_contact_edit_container">
+            <span>
+              <span id="bz_qa_contact_edit_display"><span class="vcard"><a class="email" href="mailto:svzhu@etersoft.ru" title="Svetlana Zhukova &lt;svzhu@etersoft.ru&gt;"> <span class="fn">Svetlana Zhukova</span></a>
+</span></span>
+              (<a href="#" id="bz_qa_contact_edit_action">изменить</a>)
+            </span>
+          </div>
+          <div class="bz_default_hidden" id="bz_qa_contact_input"><div id="qa_contact_autocomplete" class="bz_userfield yui-ac">  
+  <input autocomplete="on" name="qa_contact" value="svzhu@etersoft.ru" class="bz_userfield yui-ac-input" size="30" id="qa_contact">
+    <div class="yui-ac-container" id="qa_contact_autocomplete_container"><div style="display: none;" class="yui-ac-content"><div style="display: none;" class="yui-ac-hd"></div><div class="yui-ac-bd"><ul><li style="display: none;"></li><li style="display: none;"></li><li style="display: none;"></li><li style="display: none;"></li><li style="display: none;"></li><li style="display: none;"></li><li style="display: none;"></li><li style="display: none;"></li><li style="display: none;"></li><li style="display: none;"></li></ul></div><div style="display: none;" class="yui-ac-ft"></div></div></div>
+    </div>  
+    <script type="text/javascript">
+      if( typeof(YAHOO.bugzilla.userAutocomplete) !== 'undefined' 
+          && YAHOO.bugzilla.userAutocomplete != null){
+        YAHOO.bugzilla.userAutocomplete.init( "qa_contact", 
+                    "qa_contact_autocomplete_container");        
+      }
+    </script>
+            <br>
+            <input id="set_default_qa_contact" name="set_default_qa_contact" value="1" type="checkbox">
+            <label style="font-weight: normal;" for="set_default_qa_contact" id="set_default_qa_contact_label">Вернуть ответственному за приемку по умолчанию</label>
+          </div>
+          <script type="text/javascript">
+              hideEditableField('bz_qa_contact_edit_container', 
+                                 'bz_qa_contact_input', 
+                                 'bz_qa_contact_edit_action', 
+                                 'qa_contact', 
+                                 'svzhu\x40etersoft.ru');
+            initDefaultCheckbox('qa_contact');
+          </script>
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          <tr><th class="field_label " id="field_label_bug_file_loc">
+
+    <label for="bug_file_loc" accesskey="u">
+
+  <a title="Задачи может быть сопоставлен адрес интернета - например ссылка на веб-сайт с проблемой." class="field_help_link" href="http://bugs.etersoft.ru/page.cgi?id=fields.html#bug_file_loc">URL:</a>
+</label>
+</th>
+    <td>
+        <span class="bz_default_hidden" id="bz_url_edit_container"> 
+        (<a href="#" id="bz_url_edit_action">изменить</a>)</span>
+      <span id="bz_url_input_area"><input id="bug_file_loc" name="bug_file_loc" class="text_input" size="40">
+      </span>
+        <script type="text/javascript">
+          hideEditableField('bz_url_edit_container', 
+                            'bz_url_input_area', 
+                            'bz_url_edit_action', 
+                            'bug_file_loc', 
+                            "");
+        </script>
+    </td>
+  </tr>
+  
+    <tr>
+      <td class="field_label">
+        <label for="status_whiteboard" accesskey="w"><b>Заметки</b></label>:
+      </td><td colspan="2">
+       <input id="status_whiteboard" name="status_whiteboard" class="text_input" size="40">  
+  </td>
+    </tr>
+  
+    <tr>
+      <td class="field_label">
+        <label for="keywords" accesskey="k">
+          <b><a href="http://bugs.etersoft.ru/describekeywords.cgi">Ключевые слова</a></b></label>:
+      </td>
+      <td class="field_value" colspan="2"><div class="yui-ac" id="keyword_container">
+         <input autocomplete="on" id="keywords" size="40" class="text_input yui-ac-input" name="keywords" type="text">
+         <div class="yui-ac-container" id="keyword_autocomplete"><div style="display: none;" class="yui-ac-content"><div style="display: none;" class="yui-ac-hd"></div><div class="yui-ac-bd"><ul><li style="display: none;"></li><li style="display: none;"></li><li style="display: none;"></li><li style="display: none;"></li><li style="display: none;"></li><li style="display: none;"></li><li style="display: none;"></li><li style="display: none;"></li><li style="display: none;"></li><li style="display: none;"></li></ul></div><div style="display: none;" class="yui-ac-ft"></div></div></div>
+       </div>
+       <script type="text/javascript" defer="defer">
+         YAHOO.bugzilla.keyword_array = ["ALTLinux","LATER","TO_WINEHQ","WINEHQ","WIZARDSOFT","АСКОН","ИНТЕРРА"];
+         YAHOO.bugzilla.keywordAutocomplete.init('keywords', 
+                                                 'keyword_autocomplete');
+       </script>
+      </td>
+    </tr>
+          <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+          
+          <tr><th class="field_label " id="field_label_dependson">
+
+
+  <a title="Для того, чтобы появилась возможность решить эту задачу, вначале нужно решить перечисленные здесь задачи." class="field_help_link" href="http://bugs.etersoft.ru/page.cgi?id=fields.html#dependson">Зависит от:</a>
+
+</th>
+
+  <td>
+    <span id="dependson_input_area">
+        <input name="dependson" id="dependson" class="text_input">
+    </span>
+    
+      <span id="dependson_edit_container" class="edit_me bz_default_hidden">
+        (<a href="#" id="dependson_edit_action">изменить</a>)
+      </span>
+      <script type="text/javascript">
+        hideEditableField('dependson_edit_container', 
+                          'dependson_input_area', 
+                          'dependson_edit_action', 
+                          'dependson', 
+                          '');
+      </script>
+  </td>
+  </tr>
+  
+  <tr><th class="field_label " id="field_label_blocked">
+
+
+  <a title="Для того, чтобы появилась возможность решить перечисленные в этом поле задачи, вначале нужно решить эту задачу." class="field_help_link" href="http://bugs.etersoft.ru/page.cgi?id=fields.html#blocked">Блокирует:</a>
+
+</th>
+
+  <td>
+    <span class="bz_default_hidden" id="blocked_input_area">
+        <input name="blocked" id="blocked" class="text_input" value="9227, 9358">
+    </span>
+    <a class="bz_bug_link 
+          bz_status_REOPENED " title="Повторная - Необходимо проверить процедуру обновления W@E 1.0 до 2.1" href="http://bugs.etersoft.ru/show_bug.cgi?id=9227">9227</a> <a class="bz_bug_link 
+          bz_status_NEW " title="Новая - Выпуск WINE@Etersoft 2.1.4" href="http://bugs.etersoft.ru/show_bug.cgi?id=9358">9358</a> 
+      <span id="blocked_edit_container" class="edit_me">
+        (<a href="#" id="blocked_edit_action">изменить</a>)
+      </span>
+      <script type="text/javascript">
+        hideEditableField('blocked_edit_container', 
+                          'blocked_input_area', 
+                          'blocked_edit_action', 
+                          'blocked', 
+                          '9227, 9358');
+      </script>
+  </td>
+  
+  </tr><tr>
+    <th>&nbsp;</th>
+  
+    <td colspan="2" id="show_dependency_tree_or_graph" align="left">
+      Показать <a href="http://bugs.etersoft.ru/showdependencytree.cgi?id=9317&amp;hide_resolved=1">дерево</a>
+  
+        /&nbsp;<a href="http://bugs.etersoft.ru/showdependencygraph.cgi?id=9317">диаграмму</a> зависимостей
+    </td>
+  </tr>
+          
+        </tbody></table>
+      </td>
+      <td>
+        <div class="bz_column_spacer">&nbsp;</div>
+      </td>
+      
+      <td id="bz_show_bug_column_2" class="bz_show_bug_column">
+        <table cellpadding="3" cellspacing="1">
+        <tbody><tr>
+    <td class="field_label">
+      <b>Зарегистрирована</b>:
+    </td>
+    <td>2013-05-22 14:16 MSK пользователем <span class="vcard"><a class="email" href="mailto:tsergey@etersoft.ru" title="Сергей Тимушев &lt;tsergey@etersoft.ru&gt;"> <span class="fn">Сергей Тимушев</span></a>
+</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <td class="field_label">
+      <b> Изменена</b>:
+    </td>
+    <td>2013-07-04 16:03 MSK 
+      (<a href="http://bugs.etersoft.ru/show_activity.cgi?id=9317">История изменений</a>)
+    </td>
+  
+  </tr>
+         <tr>
+      <td class="field_label">
+        <label for="newcc" accesskey="a"><b>Подписчики</b>:</label>
+      </td>
+      <td>5&nbsp;пользователей
+            (включая себя)        
+        <span id="cc_edit_area_showhide_container">
+          (<a href="#" id="cc_edit_area_showhide">изменить</a>)
+        </span>        
+        <div class="bz_default_hidden" id="cc_edit_area">
+          <br>
+            <div>
+              <div><label for="cc"><b>Подписать</b></label></div><div id="newcc_autocomplete" class="bz_userfield yui-ac">  
+  <input autocomplete="on" name="newcc" class="bz_userfield yui-ac-input" size="30" id="newcc">
+    <div class="yui-ac-container" id="newcc_autocomplete_container"><div style="display: none;" class="yui-ac-content"><div style="display: none;" class="yui-ac-hd"></div><div class="yui-ac-bd"><ul><li style="display: none;"></li><li style="display: none;"></li><li style="display: none;"></li><li style="display: none;"></li><li style="display: none;"></li><li style="display: none;"></li><li style="display: none;"></li><li style="display: none;"></li><li style="display: none;"></li><li style="display: none;"></li></ul></div><div style="display: none;" class="yui-ac-ft"></div></div></div>
+    </div>  
+    <script type="text/javascript">
+      if( typeof(YAHOO.bugzilla.userAutocomplete) !== 'undefined' 
+          && YAHOO.bugzilla.userAutocomplete != null){
+        YAHOO.bugzilla.userAutocomplete.init( "newcc", 
+                    "newcc_autocomplete_container", true);        
+      }
+    </script>
+            </div>
+            <select id="cc" multiple="multiple" size="5" name="cc">
+                <option value="baraka@etersoft.ru">baraka@etersoft.ru</option>
+                <option value="dm@etersoft.ru">dm@etersoft.ru</option>
+                <option value="dtimoshkov@etersoft.ru">dtimoshkov@etersoft.ru</option>
+                <option value="kondratyuk@etersoft.ru">kondratyuk@etersoft.ru</option>
+                <option value="lav@etersoft.ru">lav@etersoft.ru</option>
+            </select>
+              <br>
+              <input id="removecc" name="removecc" type="checkbox">
+              <label for="removecc">
+                  Отменить подписку выбранных пользователей
+              </label>
+              <br>
+        </div>        
+        <script type="text/javascript">
+          hideEditableField( 'cc_edit_area_showhide_container', 
+                             'cc_edit_area', 
+                             'cc_edit_area_showhide', 
+                             '', 
+                             '');  
+        </script>        
+      </td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+<tr><th class="field_label " id="field_label_see_also">
+
+    <label for="see_also">
+
+  <a title="Позволяют ссылаться на задачи в других системах. Введите URL задачи в поле 'Добавить ссылки на задачи' для указания того, что та задача имеет отношение к этой. Можно вводить несколько адресов URL через запятую. Как правило это поле используется для ссылок на задачи в других установках системы. Если задачи зарегистрированы в этом экземпляре, лучше использовать поля 'Зависит от' и 'Блокирует'." class="field_help_link" href="http://bugs.etersoft.ru/page.cgi?id=fields.html#see_also">Ссылки:</a>
+</label>
+</th>
+<td class="field_value " id="field_container_see_also">
+
+         <span id="container_showhide_see_also">
+           <a href="#" id="showhide_see_also">(добавить)</a>
+         </span>
+         <div class="bz_default_hidden" id="container_see_also">
+           <label for="see_also">
+             <strong>Добавить ссылки на задачи:</strong>
+           </label><br>
+           <input id="see_also" size="40" class="text_input" name="see_also" type="text">
+         </div>
+         <script type="text/javascript">
+             setupEditLink('see_also');
+         </script></td>
+    </tr> 
+         <tr><th class="field_label " id="field_label_cf_tickets">
+
+    <label for="cf_tickets">
+
+  <a title="Настраиваемое поле Текст в этой установке Etersoft Bugzilla." class="field_help_link" href="http://bugs.etersoft.ru/page.cgi?id=fields.html#cf_tickets">Заявки RT:</a>
+</label>
+</th>
+<td class="field_value " id="field_container_cf_tickets" colspan="2">
+        <input id="cf_tickets" class="text_input" name="cf_tickets" size="40" maxlength="255"></td>
+    </tr>    
+    <tr><th class="field_label " id="field_label_cf_related">
+
+    <label for="cf_related">
+
+  <a title="Настраиваемое поле Текст в этой установке Etersoft Bugzilla." class="field_help_link" href="http://bugs.etersoft.ru/page.cgi?id=fields.html#cf_related">Связано с:</a>
+</label>
+</th>
+<td class="field_value " id="field_container_cf_related" colspan="2">
+        <input id="cf_related" class="text_input" name="cf_related" value="9242, 9289" size="40" maxlength="255"></td>
+    </tr>    
+    <tr><th class="field_label " id="field_label_cf_remind">
+
+    <label for="cf_remind">
+
+  <a title="Настраиваемое поле Текст в этой установке Etersoft Bugzilla." class="field_help_link" href="http://bugs.etersoft.ru/page.cgi?id=fields.html#cf_remind">Дата напоминания:</a>
+</label>
+</th>
+<td class="field_value " id="field_container_cf_remind" colspan="2">
+        <input id="cf_remind" class="text_input" name="cf_remind" size="40" maxlength="255"></td>
+    </tr>
+         <tr>
+    <td colspan="2" class="bz_section_spacer"></td>
+  </tr>
+         
+                
+
+        </tbody></table>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+          <hr id="bz_top_half_spacer">
+      </td>
+    </tr>
+  </tbody></table>
+
+  <table id="bz_big_form_parts" cellpadding="0" cellspacing="0"><tbody><tr>
+  <td><table class="bz_time_tracking_table">
+    <tbody><tr>
+      <th>
+        <label for="estimated_time">Первоначальная оценка</label>
+      </th>
+      <th>
+        Текущая оценка
+      </th>
+      <th>
+        <label for="work_time">Отработано</label>
+      </th>
+      <th>
+        <label for="remaining_time">Осталось</label>
+      </th>
+      <th>
+        % завершения
+      </th>
+      <th>
+        Отклонение
+      </th>
+      <th>
+        <label for="deadline">Срок</label>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <input name="estimated_time" id="estimated_time" value="0.0" size="6" maxlength="6">
+      </td>
+      <td>3.22
+      </td>
+      <td>3.22 +
+        <input name="work_time" id="work_time" value="0" size="3" maxlength="6" readonly="readonly" onchange="adjustRemainingTime();">
+      </td>
+      <td>
+        <input name="remaining_time" id="remaining_time" value="0.0" size="6" maxlength="6" onchange="updateRemainingTime();">
+      </td>
+      <td>100
+      </td>
+      <td>-3.22
+      </td>
+       <td><input name="deadline" size="20" id="deadline" onchange="updateCalendarFromField(this)">
+      <button type="button" class="calendar_button" id="button_calendar_deadline" onclick="showCalendar('deadline')">
+        <span>Календарь</span>
+      </button>
+
+      <div class="yui-calcontainer single" id="con_calendar_deadline"><table class="yui-calendar y2014" id="calendar_deadline" cellspacing="0">
+<thead>
+<tr>
+<th colspan="7" class="calhead">
+<div class="calheader">
+<a class="calnavleft" href="#">Previous Month (December 2013)</a>
+January 2014
+<a class="calnavright" href="#">Next Month (February 2014)</a>
+</div>
+</th>
+</tr>
+<tr class="calweekdayrow">
+<th class="calweekdaycell">Su</th>
+<th class="calweekdaycell">Mo</th>
+<th class="calweekdaycell">Tu</th>
+<th class="calweekdaycell">We</th>
+<th class="calweekdaycell">Th</th>
+<th class="calweekdaycell">Fr</th>
+<th class="calweekdaycell">Sa</th>
+</tr>
+</thead>
+<tbody class="m1 calbody">
+<tr class="w1">
+<td id="calendar_deadline_cell0" class="calcell oom calcelltop calcellleft">29</td>
+<td id="calendar_deadline_cell1" class="calcell oom calcelltop">30</td>
+<td id="calendar_deadline_cell2" class="calcell oom calcelltop">31</td>
+<td id="calendar_deadline_cell3" class="calcell wd3 d1 selectable calcelltop"><a href="#" class="selector">1</a></td>
+<td id="calendar_deadline_cell4" class="calcell wd4 d2 selectable calcelltop"><a href="#" class="selector">2</a></td>
+<td id="calendar_deadline_cell5" class="calcell wd5 d3 selectable calcelltop"><a href="#" class="selector">3</a></td>
+<td id="calendar_deadline_cell6" class="calcell wd6 d4 selectable calcelltop calcellright"><a href="#" class="selector">4</a></td>
+</tr>
+<tr class="w2">
+<td id="calendar_deadline_cell7" class="calcell wd0 d5 selectable calcellleft"><a href="#" class="selector">5</a></td>
+<td id="calendar_deadline_cell8" class="calcell wd1 d6 selectable"><a href="#" class="selector">6</a></td>
+<td id="calendar_deadline_cell9" class="calcell wd2 d7 selectable"><a href="#" class="selector">7</a></td>
+<td id="calendar_deadline_cell10" class="calcell wd3 d8 selectable"><a href="#" class="selector">8</a></td>
+<td id="calendar_deadline_cell11" class="calcell wd4 d9 selectable"><a href="#" class="selector">9</a></td>
+<td id="calendar_deadline_cell12" class="calcell wd5 d10 selectable"><a href="#" class="selector">10</a></td>
+<td id="calendar_deadline_cell13" class="calcell wd6 d11 selectable calcellright"><a href="#" class="selector">11</a></td>
+</tr>
+<tr class="w3">
+<td id="calendar_deadline_cell14" class="calcell wd0 d12 selectable calcellleft"><a href="#" class="selector">12</a></td>
+<td id="calendar_deadline_cell15" class="calcell wd1 d13 selectable"><a href="#" class="selector">13</a></td>
+<td id="calendar_deadline_cell16" class="calcell wd2 d14 selectable"><a href="#" class="selector">14</a></td>
+<td id="calendar_deadline_cell17" class="calcell wd3 d15 selectable"><a href="#" class="selector">15</a></td>
+<td id="calendar_deadline_cell18" class="calcell wd4 d16 selectable"><a href="#" class="selector">16</a></td>
+<td id="calendar_deadline_cell19" class="calcell wd5 d17 selectable"><a href="#" class="selector">17</a></td>
+<td id="calendar_deadline_cell20" class="calcell wd6 d18 selectable calcellright"><a href="#" class="selector">18</a></td>
+</tr>
+<tr class="w4">
+<td id="calendar_deadline_cell21" class="calcell wd0 d19 selectable calcellleft"><a href="#" class="selector">19</a></td>
+<td id="calendar_deadline_cell22" class="calcell wd1 d20 selectable"><a href="#" class="selector">20</a></td>
+<td id="calendar_deadline_cell23" class="calcell wd2 d21 selectable"><a href="#" class="selector">21</a></td>
+<td id="calendar_deadline_cell24" class="calcell wd3 d22 selectable"><a href="#" class="selector">22</a></td>
+<td id="calendar_deadline_cell25" class="calcell wd4 d23 selectable"><a href="#" class="selector">23</a></td>
+<td id="calendar_deadline_cell26" class="calcell wd5 d24 selectable"><a href="#" class="selector">24</a></td>
+<td id="calendar_deadline_cell27" class="calcell wd6 d25 selectable calcellright"><a href="#" class="selector">25</a></td>
+</tr>
+<tr class="w5">
+<td id="calendar_deadline_cell28" class="calcell wd0 d26 selectable calcellleft"><a href="#" class="selector">26</a></td>
+<td id="calendar_deadline_cell29" class="calcell wd1 d27 selectable"><a href="#" class="selector">27</a></td>
+<td id="calendar_deadline_cell30" class="calcell wd2 d28 selectable"><a href="#" class="selector">28</a></td>
+<td id="calendar_deadline_cell31" class="calcell wd3 d29 selectable"><a href="#" class="selector">29</a></td>
+<td id="calendar_deadline_cell32" class="calcell wd4 d30 selectable"><a href="#" class="selector">30</a></td>
+<td id="calendar_deadline_cell33" class="calcell wd5 d31 today selectable"><a href="#" class="selector">31</a></td>
+<td id="calendar_deadline_cell34" class="calcell oom calcellright">1</td>
+</tr>
+<tr class="w6">
+<td id="calendar_deadline_cell35" class="calcell oom calcellleft calcellbottom">2</td>
+<td id="calendar_deadline_cell36" class="calcell oom calcellbottom">3</td>
+<td id="calendar_deadline_cell37" class="calcell oom calcellbottom">4</td>
+<td id="calendar_deadline_cell38" class="calcell oom calcellbottom">5</td>
+<td id="calendar_deadline_cell39" class="calcell oom calcellbottom">6</td>
+<td id="calendar_deadline_cell40" class="calcell oom calcellbottom">7</td>
+<td id="calendar_deadline_cell41" class="calcell oom calcellright calcellbottom">8</td>
+</tr>
+</tbody>
+</table></div>
+
+      <script type="text/javascript">
+        createCalendar('deadline')
+      </script>
+      </td>        
+    </tr>
+    <tr>
+      <td colspan="7" class="bz_summarize_time">
+        <a href="http://bugs.etersoft.ru/summarize_time.cgi?id=9317&amp;do_depends=1">
+        Анализ трудозатрат (с учетом зависимостей задач)</a>
+      </td>
+    </tr>
+  </tbody></table>
+
+  
+<script type="text/javascript">
+<!--
+function toggle_display(link) {
+    var table = document.getElementById("attachment_table");
+    var view_all = document.getElementById("view_all");
+    var hide_obsolete_url_parameter = "&hide_obsolete=1";    
+    // Store current height for scrolling later
+    var originalHeight = table.offsetHeight;
+    var rows = YAHOO.util.Dom.getElementsByClassName(
+        'bz_tr_obsolete', 'tr', table);
+
+    for (var i = 0; i < rows.length; i++) {
+        bz_toggleClass(rows[i], 'bz_default_hidden');
+    }
+
+    if (YAHOO.util.Dom.hasClass(rows[0], 'bz_default_hidden')) {
+        link.innerHTML = "Показать неактуальные";
+        view_all.href = view_all.href + hide_obsolete_url_parameter         
+    }
+    else {
+        link.innerHTML = "Скрыть неактуальные";
+        view_all.href = view_all.href.replace(hide_obsolete_url_parameter,"");        
+    }
+
+    var newHeight = table.offsetHeight;
+    // This scrolling makes the window appear to not move at all.
+    window.scrollBy(0, newHeight - originalHeight);
+
+    return false;
+}
+//-->
+</script>
+
+<br>
+<table id="attachment_table" cellpadding="4" cellspacing="0">
+  <tbody><tr id="a0">
+    <th colspan="2" align="left">
+      Приложения
+    </th>
+  </tr>
+
+
+      <tr id="a1" class="bz_contenttype_text_plain">
+        <td valign="top">
+            <a href="http://bugs.etersoft.ru/attachment.cgi?id=2917" title="Просмотр приложения">
+          <b>systemreg.txt</b></a>
+
+          <span class="bz_attach_extra_info">
+              (419.92 KB,
+                text/plain)
+
+            <br>
+            <a href="#attach_2917" title="Перейти к комментарию, связанному с приложением">2013-05-23 14:59 MSK</a>,
+<span class="vcard"><a class="email" href="mailto:tsergey@etersoft.ru" title="Сергей Тимушев &lt;tsergey@etersoft.ru&gt;"> <span class="fn">Сергей Тимушев</span></a>
+</span>
+          </span>
+        </td>
+
+
+        <td valign="top">
+          <a href="http://bugs.etersoft.ru/attachment.cgi?id=2917&amp;action=edit">Свойства</a>
+        </td>
+      </tr>
+      <tr id="a2" class="bz_contenttype_text_plain">
+        <td valign="top">
+            <a href="http://bugs.etersoft.ru/attachment.cgi?id=2918" title="Просмотр приложения">
+          <b>userreg.txt</b></a>
+
+          <span class="bz_attach_extra_info">
+              (9.85 KB,
+                text/plain)
+
+            <br>
+            <a href="#attach_2918" title="Перейти к комментарию, связанному с приложением">2013-05-23 15:00 MSK</a>,
+<span class="vcard"><a class="email" href="mailto:tsergey@etersoft.ru" title="Сергей Тимушев &lt;tsergey@etersoft.ru&gt;"> <span class="fn">Сергей Тимушев</span></a>
+</span>
+          </span>
+        </td>
+
+
+        <td valign="top">
+          <a href="http://bugs.etersoft.ru/attachment.cgi?id=2918&amp;action=edit">Свойства</a>
+        </td>
+      </tr>
+      <tr id="a3" class="bz_contenttype_text_plain">
+        <td valign="top">
+            <a href="http://bugs.etersoft.ru/attachment.cgi?id=2919" title="Просмотр приложения">
+          <b>userdefreg.txt</b></a>
+
+          <span class="bz_attach_extra_info">
+              (4.43 KB,
+                text/plain)
+
+            <br>
+            <a href="#attach_2919" title="Перейти к комментарию, связанному с приложением">2013-05-23 15:00 MSK</a>,
+<span class="vcard"><a class="email" href="mailto:tsergey@etersoft.ru" title="Сергей Тимушев &lt;tsergey@etersoft.ru&gt;"> <span class="fn">Сергей Тимушев</span></a>
+</span>
+          </span>
+        </td>
+
+
+        <td valign="top">
+          <a href="http://bugs.etersoft.ru/attachment.cgi?id=2919&amp;action=edit">Свойства</a>
+        </td>
+      </tr>
+
+  <tr class="bz_attach_footer">
+    <td colspan="2">
+        <span class="bz_attach_view_hide">
+            <a id="view_all" href="http://bugs.etersoft.ru/attachment.cgi?bugid=9317&amp;action=viewall">Просмотреть все</a>
+        </span>      
+      <a href="http://bugs.etersoft.ru/attachment.cgi?bugid=9317&amp;action=enter">Создать новое приложение</a> 
+      (патч, тестовый пример и т.п.)      
+    </td>
+  </tr>
+</tbody></table>
+<br>
+        <div id="add_comment" class="bz_section_additional_comments">
+      <label for="comment" accesskey="c"><b>Дополнительные 
+        <u>К</u>омментарии</b></label>:
+
+        <input name="comment_is_private" value="1" id="newcommentprivacy" onclick="updateCommentTagControl(this, 'comment')" type="checkbox">
+        <label for="newcommentprivacy">
+          Сделать комментарий конфиденциальным (только для членов группы
+          <strong>Etersoft</strong>)
+        </label>
+
+      <!-- This table keeps the submit button aligned with the box. -->
+      <table><tbody><tr><td><textarea name="comment" id="comment" rows="10" cols="80" onfocus="this.rows=25"></textarea>
+        <br><div class="knob-buttons">
+      <input value="Сохранить" onclick="mysubmit();" id="commit" type="button">
+    </div>
+
+        <table id="bug_status_bottom" class="status" cellpadding="0" cellspacing="0">
+          <tbody><tr>
+            <td class="field_label">
+              <b><a href="http://bugs.etersoft.ru/page.cgi?id=fields.html#status">Состояние</a></b>:
+            </td>
+            <td><div id="status"><select id="bug_status" name="bug_status">          
+            <option value="NEW" id="v2_bug_status" selected="selected">Новая</option>          
+            <option value="ASSIGNED" id="v3_bug_status">Назначена</option>          
+            <option value="DEFERRED" id="v9_bug_status">Отложена</option>          
+            <option value="RESOLVED" id="v5_bug_status">Решена</option>          
+            <option value="CLOSED" id="v7_bug_status">Закрыта</option>
+        </select>
+        
+
+        <script type="text/javascript">
+        <!--
+          initHidingOptionsForIE('bug_status');
+          
+        //-->
+        </script>
+
+    <noscript><br>resolved&nbsp;as&nbsp;</noscript>
+
+  <span class="bz_default_hidden" id="resolution_settings"><select id="resolution" name="resolution">          
+            <option selected="selected" value=""></option><option value="FIXED" id="v2_resolution">Исправлена</option>          
+            <option value="INVALID" id="v3_resolution">Аннулирована</option>          
+            <option value="WONTFIX" id="v4_resolution">Отказано</option>          
+            <option value="DUPLICATE" id="v5_resolution">Дублирующая</option>          
+            <option value="WORKSFORME" id="v6_resolution">Невоспроизводимая</option>          
+            <option value="MOVED" id="v7_resolution">Перемещена</option>          
+            <option value="LATER" id="v8_resolution">Отложена надолго</option>
+        </select>
+        
+
+        <script type="text/javascript">
+        <!--
+          initHidingOptionsForIE('resolution');
+          
+        //-->
+        </script>
+  </span>
+
+    <noscript><br> дублирует</noscript>
+    <span class="bz_default_hidden" id="duplicate_settings"> 
+      <span class="bz_default_hidden" id="dup_id_container">задачу 
+        (<a href="#" id="dup_id_edit_action">изменить</a>)
+      </span><input id="dup_id" name="dup_id" size="6">
+    </span>
+    <div class="" id="dup_id_discoverable">
+      <a href="#" id="dup_id_discoverable_action">Отметить как дубликат</a>
+    </div>
+</div>
+
+<script type="text/javascript">
+  var close_status_array = [
+      'RESOLVED',
+      'CLOSED'
+  ];
+  YAHOO.util.Dom.removeClass('dup_id_discoverable', 'bz_default_hidden');
+  hideEditableField( "dup_id_container", "dup_id", 'dup_id_edit_action',
+                     'dup_id', '' )
+  showHideStatusItems( "",  ['',
+                             'NEW']);
+  YAHOO.util.Event.addListener( 'bug_status', "change", showHideStatusItems,
+                                ['',
+                                 'NEW']);
+  YAHOO.util.Event.addListener( 'resolution', "change", showDuplicateItem);
+  YAHOO.util.Event.addListener( 'dup_id_discoverable_action',
+                                'click',
+                                setResolutionToDuplicate,
+                                'CLOSED');
+  YAHOO.util.Event.addListener( window, 'load',  showHideStatusItems,
+                              ['',
+                               'NEW'] );
+
+</script>
+            </td>
+          </tr>
+        </tbody></table>
+      </td></tr></tbody></table>
+
+    
+  </div>    
+  </td>
+  <td><div class="bz_group_visibility_section">
+
+
+
+          <div id="bz_restrict_group_visibility_help">
+            <b>Задача видна только пользователям, входящим в каждую из групп:</b>
+             <p class="instructions">
+               Снятие отметок делает задачу более доступной.
+             </p>
+          </div>
+
+        <input name="defined_groups" value="Etersoft" type="hidden">
+
+      <input value="Etersoft" name="groups" id="group_16" type="checkbox">
+      <label for="group_16">Etersoft Team</label>
+      <br>
+
+
+
+        <input name="defined_groups" value="winedevel" type="hidden">
+
+      <input value="winedevel" name="groups" id="group_15" type="checkbox">
+      <label for="group_15">WINE@Etersoft team</label>
+      <br>
+
+
+
+        <input name="defined_groups" value="testing" type="hidden">
+
+      <input value="testing" name="groups" id="group_18" type="checkbox">
+      <label for="group_18">Группа тестирования</label>
+      <br>
+
+
+
+        <input name="defined_groups" value="CreateProductBugs" type="hidden">
+
+      <input value="CreateProductBugs" name="groups" id="group_25" type="checkbox">
+      <label for="group_25">Имеют право создавать задачи по продуктам</label>
+      <br>
+
+
+  </div>
+  </td>
+  </tr></tbody></table>
+
+  
+  <div id="comments"><script src="bug_example_files/comments.js" type="text/javascript">
+</script>
+
+
+
+
+<!-- This auto-sizes the comments and positions the collapse/expand links 
+     to the right. -->
+<table class="bz_comment_table" cellpadding="0" cellspacing="0"><tbody><tr>
+<td>
+<div id="c0" class="bz_comment bz_first_comment">
+
+      <div class="bz_first_comment_head">
+
+          <span class="bz_comment_actions">
+            <script type="text/javascript"><!--
+              addReplyLink(0, 81940);
+              addCollapseLink(0, 'Переключить показ комментариев'); // -->
+            </script>[<a href="#add_comment" onclick="replyToComment(0,81940); return false;">ответить</a>] <a href="#" class="bz_collapse_comment" id="comment_link_0" onclick="toggle_comment_display(this, 0); return false;" title="Переключить показ комментариев">[-]</a> 
+          </span>
+
+          <div class="bz_private_checkbox">
+            <input value="1" name="defined_isprivate_81940" type="hidden">
+            <input name="isprivate_81940" value="1" id="isprivate_81940" onclick="updateCommentPrivacy(this, 0)" type="checkbox">
+            <label for="isprivate_81940">Конфиденциально</label>
+          </div>
+
+        <span class="bz_comment_number">
+          <a href="http://bugs.etersoft.ru/show_bug.cgi?id=9317#c0">Описание</a>
+        </span>
+
+        <span class="bz_comment_user"><span class="vcard"><a class="email" href="mailto:tsergey@etersoft.ru" title="Сергей Тимушев &lt;tsergey@etersoft.ru&gt;"> <span class="fn">Сергей Тимушев</span></a>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-05-22 14:16:37 MSK
+        </span>
+      </div>
+
+         <br>
+         Отработанное время: 0.27
+
+
+<pre class="bz_comment_text" id="comment_text_0">При обновление с 1.0 до 2.1 шрифт в 1С и в notepad отображается некорректно (каракули), что при административной установки, что при установки от одного пользователя.
+
+При административной установки:
+
+[tsergey]Ubuntu 10.04
+
+установил wine 1.0.12
+Создал второго пользователя (# adduser test)
+
+Под guest
+$ wine --admin
+$ wine notepad
+Набор текста на любом языке проходит удачно.
+
+Под test
+$ wine --attach
+$ wine notepad
+Набор текста на любом языке проходит удачно.
+
+Под guest
+Установил wine 2.1 поверх, сделал wine --update
+$ wine notepad
+при вводе на англ языке вводятся каракули
+при вводе на рус языке вводятся пробелы и иногда проскакивает буква я
+
+При установки от одного пользователя:
+1)
+[tsergey]Ubuntu 10.04 (New)
+
+Установил wine 1.0.12-eter14/23
+$ wine notepad
+Набор текста нормальный
+
+Установил wine 2.1.2-2.1.0-eter8/2
+$ wine --update
+$ wine notepad
+Каракули вместо букв.
+
+2)
+[T] ALTLinux LXDE (Danil)
+
+$ sudo rpm -Uvh wine-etersoft-1.0.12-alt13.M60P.14.i586.rpm
+wine-etersoft--network-1.0.12-alt22.M60.23.i586.rpm
+
+$ wine notepad
+Шрифт нормальный
+
+$ sudo rpm -Uvh wine-etersoft-2.1.2-alt13.M60P.14.i586.rpm
+wine-etersoft-network-2.1.0-alt2.M60P.3.i586.rpm
+
+$ wine --update
+
+$ wine notepad
+Каракули</pre>
+    </div><div id="c1" class="bz_comment bz_private">
+
+      <div class="bz_comment_head">
+
+          <span class="bz_comment_actions">
+            <script type="text/javascript"><!--
+              addReplyLink(1, 81943);
+              addCollapseLink(1, 'Переключить показ комментариев'); // -->
+            </script>[<a href="#add_comment" onclick="replyToComment(1,81943); return false;">ответить</a>] <a href="#" class="bz_collapse_comment" id="comment_link_1" onclick="toggle_comment_display(this, 1); return false;" title="Переключить показ комментариев">[-]</a> 
+          </span>
+
+          <div class="bz_private_checkbox">
+            <input value="1" name="defined_isprivate_81943" type="hidden">
+            <input name="isprivate_81943" value="1" id="isprivate_81943" onclick="updateCommentPrivacy(this, 1)" checked="checked" type="checkbox">
+            <label for="isprivate_81943">Конфиденциально</label>
+          </div>
+
+        <span class="bz_comment_number">
+          <a href="http://bugs.etersoft.ru/show_bug.cgi?id=9317#c1">Комментарий 1</a>
+        </span>
+
+        <span class="bz_comment_user"><span class="vcard"><a class="email" href="mailto:dtimoshkov@etersoft.ru" title="Dmitry Timoshkov &lt;dtimoshkov@etersoft.ru&gt;"> <span class="fn">Dmitry Timoshkov</span></a>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-05-22 14:27:40 MSK
+        </span>
+      </div>
+
+         <br>
+         Отработанное время: 0.08
+
+
+<pre class="bz_comment_text" id="comment_text_1">Чем эта задача отличается от <a class="bz_bug_link 
+          bz_status_CLOSED  bz_closed" title="Закрыта Дублирующая - При обновлении W@E с 1.0 до 2.1 шрифт отображается некорректно" href="http://bugs.etersoft.ru/show_bug.cgi?id=9242">https://bugs.etersoft.ru/show_bug.cgi?id=9242</a> ?
+
+Copy/Paste из задачи 9242:
+-------------------------------------------------------------------------
+Пожалуйста потрудитесь провести минимальное исследование проблемы и
+как минимум создать создать рабочий префикс и проверить воспроизводится
+ли проблема без обновления.
+
+Если же проблема вызвана именно обновлением, то Вам нужно самостоятельно
+сравнить рабочий и сломанный префикс и выяснить, что в них отличается.
+-------------------------------------------------------------------------
+
+Чего так и не было сделано даже в минимальном объеме.</pre>
+    </div><div id="c2" class="bz_comment bz_private">
+
+      <div class="bz_comment_head">
+
+          <span class="bz_comment_actions">
+            <script type="text/javascript"><!--
+              addReplyLink(2, 81945);
+              addCollapseLink(2, 'Переключить показ комментариев'); // -->
+            </script>[<a href="#add_comment" onclick="replyToComment(2,81945); return false;">ответить</a>] <a href="#" class="bz_collapse_comment" id="comment_link_2" onclick="toggle_comment_display(this, 2); return false;" title="Переключить показ комментариев">[-]</a> 
+          </span>
+
+          <div class="bz_private_checkbox">
+            <input value="1" name="defined_isprivate_81945" type="hidden">
+            <input name="isprivate_81945" value="1" id="isprivate_81945" onclick="updateCommentPrivacy(this, 2)" checked="checked" type="checkbox">
+            <label for="isprivate_81945">Конфиденциально</label>
+          </div>
+
+        <span class="bz_comment_number">
+          <a href="http://bugs.etersoft.ru/show_bug.cgi?id=9317#c2">Комментарий 2</a>
+        </span>
+
+        <span class="bz_comment_user"><span class="vcard"><a class="email" href="mailto:kondratyuk@etersoft.ru" title="Константин Кондратюк &lt;kondratyuk@etersoft.ru&gt;"> <span class="fn">Константин Кондратюк</span></a>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-05-22 14:29:04 MSK
+        </span>
+      </div>
+
+         <br>
+         Отработанное время: 0.08
+
+
+<pre class="bz_comment_text" id="comment_text_2">"С сообщениями об ошибке просьба писать в службу поддержки <a href="mailto:support@etersoft.ru">support@etersoft.ru</a>. Ваше сообщение будет передано тестировщикам, исследовано и при необходимости передано разработчикам для исправления."
+
+Напрямую вешать на разработчиков абсолютно не исследованные ошибки впредь, пожалуйста, не нужно. Сколько раз ещё нужно сказать?</pre>
+    </div><div id="c3" class="bz_comment bz_private">
+
+      <div class="bz_comment_head">
+
+          <span class="bz_comment_actions">
+            <script type="text/javascript"><!--
+              addReplyLink(3, 81948);
+              addCollapseLink(3, 'Переключить показ комментариев'); // -->
+            </script>[<a href="#add_comment" onclick="replyToComment(3,81948); return false;">ответить</a>] <a href="#" class="bz_collapse_comment" id="comment_link_3" onclick="toggle_comment_display(this, 3); return false;" title="Переключить показ комментариев">[-]</a> 
+          </span>
+
+          <div class="bz_private_checkbox">
+            <input value="1" name="defined_isprivate_81948" type="hidden">
+            <input name="isprivate_81948" value="1" id="isprivate_81948" onclick="updateCommentPrivacy(this, 3)" checked="checked" type="checkbox">
+            <label for="isprivate_81948">Конфиденциально</label>
+          </div>
+
+        <span class="bz_comment_number">
+          <a href="http://bugs.etersoft.ru/show_bug.cgi?id=9317#c3">Комментарий 3</a>
+        </span>
+
+        <span class="bz_comment_user"><span class="vcard"><a class="email" href="mailto:serhio@etersoft.ru" title="Сергей Гуральник &lt;serhio@etersoft.ru&gt;"> <span class="fn">Сергей Гуральник</span></a>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-05-22 14:32:26 MSK
+        </span>
+      </div>
+
+         <br>
+         Отработанное время: 0.08
+
+
+<pre class="bz_comment_text" id="comment_text_3">9317, 9240, 9242, 9241 - одна и та же задача.</pre>
+    </div><div id="c4" class="bz_comment bz_private">
+
+      <div class="bz_comment_head">
+
+          <span class="bz_comment_actions">
+            <script type="text/javascript"><!--
+              addReplyLink(4, 81949);
+              addCollapseLink(4, 'Переключить показ комментариев'); // -->
+            </script>[<a href="#add_comment" onclick="replyToComment(4,81949); return false;">ответить</a>] <a href="#" class="bz_collapse_comment" id="comment_link_4" onclick="toggle_comment_display(this, 4); return false;" title="Переключить показ комментариев">[-]</a> 
+          </span>
+
+          <div class="bz_private_checkbox">
+            <input value="1" name="defined_isprivate_81949" type="hidden">
+            <input name="isprivate_81949" value="1" id="isprivate_81949" onclick="updateCommentPrivacy(this, 4)" checked="checked" type="checkbox">
+            <label for="isprivate_81949">Конфиденциально</label>
+          </div>
+
+        <span class="bz_comment_number">
+          <a href="http://bugs.etersoft.ru/show_bug.cgi?id=9317#c4">Комментарий 4</a>
+        </span>
+
+        <span class="bz_comment_user"><span class="vcard"><a class="email" href="mailto:tsergey@etersoft.ru" title="Сергей Тимушев &lt;tsergey@etersoft.ru&gt;"> <span class="fn">Сергей Тимушев</span></a>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-05-22 14:34:20 MSK
+        </span>
+      </div>
+
+         <br>
+         Отработанное время: 0.28
+
+
+<pre class="bz_comment_text" id="comment_text_4">(В ответ на <a href="http://bugs.etersoft.ru/show_bug.cgi?id=9317#c3">comment #3</a>)
+<span class="quote">&gt; 9317, 9240, 9242, 9241 - одна и та же задача.</span>
+
+Сказали сделать все в одной и повесить на Вас</pre>
+    </div><div id="c5" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+          <span class="bz_comment_actions">
+            <script type="text/javascript"><!--
+              addReplyLink(5, 81950);
+              addCollapseLink(5, 'Переключить показ комментариев'); // -->
+            </script>[<a href="#add_comment" onclick="replyToComment(5,81950); return false;">ответить</a>] <a href="#" class="bz_collapse_comment" id="comment_link_5" onclick="toggle_comment_display(this, 5); return false;" title="Переключить показ комментариев">[-]</a> 
+          </span>
+
+          <div class="bz_private_checkbox">
+            <input value="1" name="defined_isprivate_81950" type="hidden">
+            <input name="isprivate_81950" value="1" id="isprivate_81950" onclick="updateCommentPrivacy(this, 5)" type="checkbox">
+            <label for="isprivate_81950">Конфиденциально</label>
+          </div>
+
+        <span class="bz_comment_number">
+          <a href="http://bugs.etersoft.ru/show_bug.cgi?id=9317#c5">Комментарий 5</a>
+        </span>
+
+        <span class="bz_comment_user"><span class="vcard"><a class="email" href="mailto:lav@etersoft.ru" title="Vitaly Lipatov &lt;lav@etersoft.ru&gt;"> <span class="fn">Vitaly Lipatov</span></a>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-05-22 14:35:26 MSK
+        </span>
+      </div>
+
+         <br>
+         Отработанное время: 0.07
+
+
+<pre class="bz_comment_text" id="comment_text_5">(В ответ на <a href="http://bugs.etersoft.ru/show_bug.cgi?id=9317#c1">comment #1</a>)
+<span class="quote">&gt; -------------------------------------------------------------------------
+&gt; Если же проблема вызвана именно обновлением, то Вам нужно самостоятельно
+&gt; сравнить рабочий и сломанный префикс и выяснить, что в них отличается.
+&gt; -------------------------------------------------------------------------</span>
+
+Имелось в виду, что нужно сравнить
+- задействованные шрифты
+- реестры до и после обновления
+- вывод с WINEDEBUG=+font
+и т.п.
+Проблема явно вызвана секциями в реестре, отвечающими за шрифты. Их немного,
+например,
+[HKEY_USERS\S-1-5-21-0-0-0-1000\Software\Wine\Fonts\Replacements]</pre>
+    </div><div id="c6" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+          <span class="bz_comment_actions">
+            <script type="text/javascript"><!--
+              addReplyLink(6, 81953);
+              addCollapseLink(6, 'Переключить показ комментариев'); // -->
+            </script>[<a href="#add_comment" onclick="replyToComment(6,81953); return false;">ответить</a>] <a href="#" class="bz_collapse_comment" id="comment_link_6" onclick="toggle_comment_display(this, 6); return false;" title="Переключить показ комментариев">[-]</a> 
+          </span>
+
+          <div class="bz_private_checkbox">
+            <input value="1" name="defined_isprivate_81953" type="hidden">
+            <input name="isprivate_81953" value="1" id="isprivate_81953" onclick="updateCommentPrivacy(this, 6)" type="checkbox">
+            <label for="isprivate_81953">Конфиденциально</label>
+          </div>
+
+        <span class="bz_comment_number">
+          <a href="http://bugs.etersoft.ru/show_bug.cgi?id=9317#c6">Комментарий 6</a>
+        </span>
+
+        <span class="bz_comment_user"><span class="vcard"><a class="email" href="mailto:serhio@etersoft.ru" title="Сергей Гуральник &lt;serhio@etersoft.ru&gt;"> <span class="fn">Сергей Гуральник</span></a>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-05-22 14:38:10 MSK
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" id="comment_text_6">*** <a class="bz_bug_link 
+          bz_status_CLOSED  bz_closed" title="Закрыта Дублирующая - При обновлении W@E с 1.0 до 2.1 шрифт отображается некорректно" href="http://bugs.etersoft.ru/show_bug.cgi?id=9240">Задача 9240</a> признана повтором этой задачи. ***</pre>
+    </div><div id="c7" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+          <span class="bz_comment_actions">
+            <script type="text/javascript"><!--
+              addReplyLink(7, 81955);
+              addCollapseLink(7, 'Переключить показ комментариев'); // -->
+            </script>[<a href="#add_comment" onclick="replyToComment(7,81955); return false;">ответить</a>] <a href="#" class="bz_collapse_comment" id="comment_link_7" onclick="toggle_comment_display(this, 7); return false;" title="Переключить показ комментариев">[-]</a> 
+          </span>
+
+          <div class="bz_private_checkbox">
+            <input value="1" name="defined_isprivate_81955" type="hidden">
+            <input name="isprivate_81955" value="1" id="isprivate_81955" onclick="updateCommentPrivacy(this, 7)" type="checkbox">
+            <label for="isprivate_81955">Конфиденциально</label>
+          </div>
+
+        <span class="bz_comment_number">
+          <a href="http://bugs.etersoft.ru/show_bug.cgi?id=9317#c7">Комментарий 7</a>
+        </span>
+
+        <span class="bz_comment_user"><span class="vcard"><a class="email" href="mailto:serhio@etersoft.ru" title="Сергей Гуральник &lt;serhio@etersoft.ru&gt;"> <span class="fn">Сергей Гуральник</span></a>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-05-22 14:38:49 MSK
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" id="comment_text_7">*** <a class="bz_bug_link 
+          bz_status_CLOSED  bz_closed" title="Закрыта Дублирующая - При обновлении W@E с 1.0 до 2.1 шрифт отображается некорректно" href="http://bugs.etersoft.ru/show_bug.cgi?id=9241">Задача 9241</a> признана повтором этой задачи. ***</pre>
+    </div><div id="c8" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+          <span class="bz_comment_actions">
+            <script type="text/javascript"><!--
+              addReplyLink(8, 81957);
+              addCollapseLink(8, 'Переключить показ комментариев'); // -->
+            </script>[<a href="#add_comment" onclick="replyToComment(8,81957); return false;">ответить</a>] <a href="#" class="bz_collapse_comment" id="comment_link_8" onclick="toggle_comment_display(this, 8); return false;" title="Переключить показ комментариев">[-]</a> 
+          </span>
+
+          <div class="bz_private_checkbox">
+            <input value="1" name="defined_isprivate_81957" type="hidden">
+            <input name="isprivate_81957" value="1" id="isprivate_81957" onclick="updateCommentPrivacy(this, 8)" type="checkbox">
+            <label for="isprivate_81957">Конфиденциально</label>
+          </div>
+
+        <span class="bz_comment_number">
+          <a href="http://bugs.etersoft.ru/show_bug.cgi?id=9317#c8">Комментарий 8</a>
+        </span>
+
+        <span class="bz_comment_user"><span class="vcard"><a class="email" href="mailto:serhio@etersoft.ru" title="Сергей Гуральник &lt;serhio@etersoft.ru&gt;"> <span class="fn">Сергей Гуральник</span></a>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-05-22 14:40:10 MSK
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" id="comment_text_8">*** <a class="bz_bug_link 
+          bz_status_CLOSED  bz_closed" title="Закрыта Дублирующая - При обновлении W@E с 1.0 до 2.1 шрифт отображается некорректно" href="http://bugs.etersoft.ru/show_bug.cgi?id=9242">Задача 9242</a> признана повтором этой задачи. ***</pre>
+    </div><div id="c9" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+          <span class="bz_comment_actions">
+            <script type="text/javascript"><!--
+              addReplyLink(9, 81959);
+              addCollapseLink(9, 'Переключить показ комментариев'); // -->
+            </script>[<a href="#add_comment" onclick="replyToComment(9,81959); return false;">ответить</a>] <a href="#" class="bz_collapse_comment" id="comment_link_9" onclick="toggle_comment_display(this, 9); return false;" title="Переключить показ комментариев">[-]</a> 
+          </span>
+
+          <div class="bz_private_checkbox">
+            <input value="1" name="defined_isprivate_81959" type="hidden">
+            <input name="isprivate_81959" value="1" id="isprivate_81959" onclick="updateCommentPrivacy(this, 9)" type="checkbox">
+            <label for="isprivate_81959">Конфиденциально</label>
+          </div>
+
+        <span class="bz_comment_number">
+          <a href="http://bugs.etersoft.ru/show_bug.cgi?id=9317#c9">Комментарий 9</a>
+        </span>
+
+        <span class="bz_comment_user"><span class="vcard"><a class="email" href="mailto:tsergey@etersoft.ru" title="Сергей Тимушев &lt;tsergey@etersoft.ru&gt;"> <span class="fn">Сергей Тимушев</span></a>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-05-22 14:45:41 MSK
+        </span>
+      </div>
+
+         <br>
+         Отработанное время: 0.2
+
+
+<pre class="bz_comment_text" id="comment_text_9">(В ответ на <a href="http://bugs.etersoft.ru/show_bug.cgi?id=9317#c6">comment #6</a>)
+<span class="quote">&gt; *** <a class="bz_bug_link 
+          bz_status_CLOSED  bz_closed" title="Закрыта Дублирующая - При обновлении W@E с 1.0 до 2.1 шрифт отображается некорректно" href="http://bugs.etersoft.ru/show_bug.cgi?id=9240">Задача 9240</a> признана повтором этой задачи. ***</span>
+
+9240 и 9241 я сделал нечаянно, инет глюканул и вот получилось три одинаковых - основная была 9242</pre>
+    </div><div id="c10" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+          <span class="bz_comment_actions">
+            <script type="text/javascript"><!--
+              addReplyLink(10, 81989);
+              addCollapseLink(10, 'Переключить показ комментариев'); // -->
+            </script>[<a href="#add_comment" onclick="replyToComment(10,81989); return false;">ответить</a>] <a href="#" class="bz_collapse_comment" id="comment_link_10" onclick="toggle_comment_display(this, 10); return false;" title="Переключить показ комментариев">[-]</a> 
+          </span>
+
+          <div class="bz_private_checkbox">
+            <input value="1" name="defined_isprivate_81989" type="hidden">
+            <input name="isprivate_81989" value="1" id="isprivate_81989" onclick="updateCommentPrivacy(this, 10)" type="checkbox">
+            <label for="isprivate_81989">Конфиденциально</label>
+          </div>
+
+        <span class="bz_comment_number">
+          <a href="http://bugs.etersoft.ru/show_bug.cgi?id=9317#c10">Комментарий 10</a>
+        </span>
+
+        <span class="bz_comment_user"><span class="vcard"><a class="email" href="mailto:dm@etersoft.ru" title="Дмитрий Галочкин &lt;dm@etersoft.ru&gt;"> <span class="fn">Дмитрий Галочкин</span></a>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-05-22 17:50:06 MSK
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" id="comment_text_10">*** <a class="bz_bug_link 
+          bz_status_CLOSED  bz_closed" title="Закрыта Дублирующая - Проверить обновление с W@E 1.0.12 до 2.1 в адм. режиме" href="http://bugs.etersoft.ru/show_bug.cgi?id=9289">Задача 9289</a> признана повтором этой задачи. ***</pre>
+    </div><div id="c11" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+          <span class="bz_comment_actions">
+            <script type="text/javascript"><!--
+              addReplyLink(11, 82017);
+              addCollapseLink(11, 'Переключить показ комментариев'); // -->
+            </script>[<a href="#add_comment" onclick="replyToComment(11,82017); return false;">ответить</a>] <a href="#" class="bz_collapse_comment" id="comment_link_11" onclick="toggle_comment_display(this, 11); return false;" title="Переключить показ комментариев">[-]</a> 
+          </span>
+
+          <div class="bz_private_checkbox">
+            <input value="1" name="defined_isprivate_82017" type="hidden">
+            <input name="isprivate_82017" value="1" id="isprivate_82017" onclick="updateCommentPrivacy(this, 11)" type="checkbox">
+            <label for="isprivate_82017">Конфиденциально</label>
+          </div>
+
+        <span class="bz_comment_number">
+          <a href="http://bugs.etersoft.ru/show_bug.cgi?id=9317#c11">Комментарий 11</a>
+        </span>
+
+        <span class="bz_comment_user"><span class="vcard"><a class="email" href="mailto:tsergey@etersoft.ru" title="Сергей Тимушев &lt;tsergey@etersoft.ru&gt;"> <span class="fn">Сергей Тимушев</span></a>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-05-23 14:59:38 MSK
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" id="comment_text_11">Создано <span class=""><a href="http://bugs.etersoft.ru/attachment.cgi?id=2917" name="attach_2917" title="systemreg.txt">attachment 2917</a> <a href="http://bugs.etersoft.ru/attachment.cgi?id=2917&amp;action=edit" title="systemreg.txt">[details]</a></span>
+systemreg.txt</pre>
+    </div><div id="c12" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+          <span class="bz_comment_actions">
+            <script type="text/javascript"><!--
+              addReplyLink(12, 82018);
+              addCollapseLink(12, 'Переключить показ комментариев'); // -->
+            </script>[<a href="#add_comment" onclick="replyToComment(12,82018); return false;">ответить</a>] <a href="#" class="bz_collapse_comment" id="comment_link_12" onclick="toggle_comment_display(this, 12); return false;" title="Переключить показ комментариев">[-]</a> 
+          </span>
+
+          <div class="bz_private_checkbox">
+            <input value="1" name="defined_isprivate_82018" type="hidden">
+            <input name="isprivate_82018" value="1" id="isprivate_82018" onclick="updateCommentPrivacy(this, 12)" type="checkbox">
+            <label for="isprivate_82018">Конфиденциально</label>
+          </div>
+
+        <span class="bz_comment_number">
+          <a href="http://bugs.etersoft.ru/show_bug.cgi?id=9317#c12">Комментарий 12</a>
+        </span>
+
+        <span class="bz_comment_user"><span class="vcard"><a class="email" href="mailto:tsergey@etersoft.ru" title="Сергей Тимушев &lt;tsergey@etersoft.ru&gt;"> <span class="fn">Сергей Тимушев</span></a>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-05-23 15:00:02 MSK
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" id="comment_text_12">Создано <span class=""><a href="http://bugs.etersoft.ru/attachment.cgi?id=2918" name="attach_2918" title="userreg.txt">attachment 2918</a> <a href="http://bugs.etersoft.ru/attachment.cgi?id=2918&amp;action=edit" title="userreg.txt">[details]</a></span>
+userreg.txt</pre>
+    </div><div id="c13" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+          <span class="bz_comment_actions">
+            <script type="text/javascript"><!--
+              addReplyLink(13, 82019);
+              addCollapseLink(13, 'Переключить показ комментариев'); // -->
+            </script>[<a href="#add_comment" onclick="replyToComment(13,82019); return false;">ответить</a>] <a href="#" class="bz_collapse_comment" id="comment_link_13" onclick="toggle_comment_display(this, 13); return false;" title="Переключить показ комментариев">[-]</a> 
+          </span>
+
+          <div class="bz_private_checkbox">
+            <input value="1" name="defined_isprivate_82019" type="hidden">
+            <input name="isprivate_82019" value="1" id="isprivate_82019" onclick="updateCommentPrivacy(this, 13)" type="checkbox">
+            <label for="isprivate_82019">Конфиденциально</label>
+          </div>
+
+        <span class="bz_comment_number">
+          <a href="http://bugs.etersoft.ru/show_bug.cgi?id=9317#c13">Комментарий 13</a>
+        </span>
+
+        <span class="bz_comment_user"><span class="vcard"><a class="email" href="mailto:tsergey@etersoft.ru" title="Сергей Тимушев &lt;tsergey@etersoft.ru&gt;"> <span class="fn">Сергей Тимушев</span></a>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-05-23 15:00:30 MSK
+        </span>
+      </div>
+
+
+
+<pre class="bz_comment_text" id="comment_text_13">Создано <span class=""><a href="http://bugs.etersoft.ru/attachment.cgi?id=2919" name="attach_2919" title="userdefreg.txt">attachment 2919</a> <a href="http://bugs.etersoft.ru/attachment.cgi?id=2919&amp;action=edit" title="userdefreg.txt">[details]</a></span>
+userdefreg.txt</pre>
+    </div><div id="c14" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+          <span class="bz_comment_actions">
+            <script type="text/javascript"><!--
+              addReplyLink(14, 82020);
+              addCollapseLink(14, 'Переключить показ комментариев'); // -->
+            </script>[<a href="#add_comment" onclick="replyToComment(14,82020); return false;">ответить</a>] <a href="#" class="bz_collapse_comment" id="comment_link_14" onclick="toggle_comment_display(this, 14); return false;" title="Переключить показ комментариев">[-]</a> 
+          </span>
+
+          <div class="bz_private_checkbox">
+            <input value="1" name="defined_isprivate_82020" type="hidden">
+            <input name="isprivate_82020" value="1" id="isprivate_82020" onclick="updateCommentPrivacy(this, 14)" type="checkbox">
+            <label for="isprivate_82020">Конфиденциально</label>
+          </div>
+
+        <span class="bz_comment_number">
+          <a href="http://bugs.etersoft.ru/show_bug.cgi?id=9317#c14">Комментарий 14</a>
+        </span>
+
+        <span class="bz_comment_user"><span class="vcard"><a class="email" href="mailto:tsergey@etersoft.ru" title="Сергей Тимушев &lt;tsergey@etersoft.ru&gt;"> <span class="fn">Сергей Тимушев</span></a>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-05-23 15:01:48 MSK
+        </span>
+      </div>
+
+         <br>
+         Отработанное время: 2.05
+
+
+<pre class="bz_comment_text" id="comment_text_14">Создал
+$ swine 1.0.12 bugs/9317
+Скопировал ее в 
+$ swine 2.1 bugs/9317
+$ wine --updateф
+Шрифты не работают
+
+$ swine 2.1 bugs/9317-2
+Шрифты работают
+
+$ wineregdiff system.reg system2.reg &gt; systemreg.txt (system.reg - после обновления, system2.reg - обычная созданная с нуля)
+$ wineregdiff user.reg user2.reg &gt; userreg.txt (user.reg - после обновления, user2.reg - обычная созданная с нуля)
+$ wineregdiff userdef.reg userdef2.reg &gt; userdefreg.txt (userdef.reg - после обновления, userdef2.reg - обычная созданная с нуля)
+
+Все txt файлы я скинул в багу. Поле с fonts присутствует только в userreg.txt
+
+Вот что заметил:
+$ wine notepad (в бутылке, которую обновил до 2.1, т.е. $ swine 2.1 bugs/9317)
+набираются каракули, но как только я в правка-&gt;шрифт меняю шрифт с system на tahoma (например) - все сразу отображается нормально. В бутылке созданной с нуля по умолчанию тоже стоит шрифт system, но шрифт нормально отображается</pre>
+    </div><div id="c15" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+          <span class="bz_comment_actions">
+            <script type="text/javascript"><!--
+              addReplyLink(15, 82940);
+              addCollapseLink(15, 'Переключить показ комментариев'); // -->
+            </script>[<a href="#add_comment" onclick="replyToComment(15,82940); return false;">ответить</a>] <a href="#" class="bz_collapse_comment" id="comment_link_15" onclick="toggle_comment_display(this, 15); return false;" title="Переключить показ комментариев">[-]</a> 
+          </span>
+
+          <div class="bz_private_checkbox">
+            <input value="1" name="defined_isprivate_82940" type="hidden">
+            <input name="isprivate_82940" value="1" id="isprivate_82940" onclick="updateCommentPrivacy(this, 15)" type="checkbox">
+            <label for="isprivate_82940">Конфиденциально</label>
+          </div>
+
+        <span class="bz_comment_number">
+          <a href="http://bugs.etersoft.ru/show_bug.cgi?id=9317#c15">Комментарий 15</a>
+        </span>
+
+        <span class="bz_comment_user"><span class="vcard"><a class="email" href="mailto:baraka@etersoft.ru" title="Денис Баранов &lt;baraka@etersoft.ru&gt;"> <span class="fn">Денис Баранов</span></a>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-06-17 16:31:52 MSK
+        </span>
+      </div>
+
+         <br>
+         Отработанное время: 0.03
+
+
+<pre class="bz_comment_text" id="comment_text_15">После исполнения баги 1992 разобраться почему шрифт system при обновлении сбрасывается.</pre>
+    </div><div id="c16" class="bz_comment">
+
+      <div class="bz_comment_head">
+
+          <span class="bz_comment_actions">
+            <script type="text/javascript"><!--
+              addReplyLink(16, 83217);
+              addCollapseLink(16, 'Переключить показ комментариев'); // -->
+            </script>[<a href="#add_comment" onclick="replyToComment(16,83217); return false;">ответить</a>] <a href="#" class="bz_collapse_comment" id="comment_link_16" onclick="toggle_comment_display(this, 16); return false;" title="Переключить показ комментариев">[-]</a> 
+          </span>
+
+          <div class="bz_private_checkbox">
+            <input value="1" name="defined_isprivate_83217" type="hidden">
+            <input name="isprivate_83217" value="1" id="isprivate_83217" onclick="updateCommentPrivacy(this, 16)" type="checkbox">
+            <label for="isprivate_83217">Конфиденциально</label>
+          </div>
+
+        <span class="bz_comment_number">
+          <a href="http://bugs.etersoft.ru/show_bug.cgi?id=9317#c16">Комментарий 16</a>
+        </span>
+
+        <span class="bz_comment_user"><span class="vcard"><a class="email" href="mailto:dm@etersoft.ru" title="Дмитрий Галочкин &lt;dm@etersoft.ru&gt;"> <span class="fn">Дмитрий Галочкин</span></a>
+</span>
+        </span>
+
+        <span class="bz_comment_user_images">
+        </span>
+
+        <span class="bz_comment_time">
+          2013-06-25 16:03:50 MSK
+        </span>
+      </div>
+
+         <br>
+         Отработанное время: 0.08
+
+
+<pre class="bz_comment_text" id="comment_text_16">Дотавточно ли предоставленной информации, чтобы выяснить в чем заключается проблема? Нужно провести дополнительное расследование? Задачу решаем в обход зависимости от 1992 (т.к. к выпуску 2.1 не успеть).</pre>
+    </div>
+
+  <div class="bz_add_comment">
+    <a href="#" onclick="return goto_add_comments();">
+       Добавить комментарий</a>
+  </div>
+
+  
+
+</td>
+<td>
+    <ul class="bz_collapse_expand_comments">
+      <li><a href="#" onclick="toggle_all_comments('collapse'); 
+                               return false;">Свернуть все комментарии</a></li>
+      <li><a href="#" onclick="toggle_all_comments('expand');
+                               return false;">Развернуть все комментарии</a></li>
+    </ul>
+</td>
+</tr></tbody></table>
+  </div>
+          
+
+</form>
+
+<hr>
+<ul class="related_actions">
+    <li><a href="http://bugs.etersoft.ru/show_bug.cgi?format=multiple&amp;id=9317">Версия для печати</a></li>
+    <li>&nbsp;-&nbsp;<a href="http://bugs.etersoft.ru/show_bug.cgi?ctype=xml&amp;id=9317">XML</a></li>
+    <li>&nbsp;-&nbsp;<a href="http://bugs.etersoft.ru/enter_bug.cgi?cloned_bug_id=9317">Создать копию задачи</a></li>
+    
+    <li>&nbsp;-&nbsp;<a href="#">В начало страницы </a></li>
+    </ul>        
+
+
+<div class="navigation">
+  <b>Список задач:</b>
+
+    (1 из 8)
+
+    <a href="http://bugs.etersoft.ru/show_bug.cgi?id=9317&amp;list_id=1992">Первая</a>
+    <a href="http://bugs.etersoft.ru/show_bug.cgi?id=4&amp;list_id=1992">Последняя</a>
+
+        <i><font color="#777777">Предыдущая</font></i>
+
+        <a href="http://bugs.etersoft.ru/show_bug.cgi?id=7887&amp;list_id=1992">Следующая</a>
+
+  &nbsp;&nbsp;<a href="http://bugs.etersoft.ru/buglist.cgi?regetlastlist=1992">Показать результат последнего поиска</a>
+</div>
+
+<br>
+</div>
+
+
+
+<div id="footer">
+  <div class="intro"></div>
+
+
+
+
+<ul id="useful-links">
+  <li id="links-actions"><ul class="links">
+  <li><a href="http://bugs.etersoft.ru/">В начало</a></li>
+  <li><span class="separator">| </span><a href="http://bugs.etersoft.ru/enter_bug.cgi">Создать</a></li>
+  <li><span class="separator">| </span><a href="http://bugs.etersoft.ru/describecomponents.cgi">Список</a></li>
+  <li><span class="separator">| </span><a href="http://bugs.etersoft.ru/query.cgi">Поиск</a></li>
+
+  <li class="form">
+    <span class="separator">| </span>
+    <form action="buglist.cgi" method="get" onsubmit="if (this.quicksearch.value == '')
+                  { alert('Введите условие поиска.');
+                    return false; } return true;">
+    <input class="txt" id="quicksearch_bottom" name="quicksearch" title="Быстрый поиск" type="text">
+    <input class="btn" value="Искать" id="find_bottom" type="submit"></form>
+  <a href="http://bugs.etersoft.ru/page.cgi?id=quicksearch.html" title="Справка по быстрому поиску">[?]</a></li>
+
+  <li><span class="separator">| </span><a href="http://bugs.etersoft.ru/report.cgi">Отчеты</a></li>
+
+  <li></li>
+
+    <li><span class="separator">| </span><a href="http://bugs.etersoft.ru/userprefs.cgi">Параметры</a></li>
+      <li><span class="separator">| </span><a href="http://bugs.etersoft.ru/admin.cgi">Администрирование</a></li>
+<li>
+        <span class="separator">| </span>
+        <a href="http://bugs.etersoft.ru/docs/html/bug_page.html" target="_blank">Справка</a>
+      </li>
+
+    <li>
+      <span class="separator">| </span>
+        <a href="http://bugs.etersoft.ru/index.cgi?logout=1">Завершить&nbsp;сеанс</a>
+        dm@etersoft.ru</li>
+</ul>
+  </li>
+
+  
+    
+    <li id="links-saved">
+      <ul class="links">
+          <li><a href="http://bugs.etersoft.ru/buglist.cgi?resolution=---&amp;emailassigned_to1=1&amp;emailreporter1=1&amp;emailtype1=exact&amp;email1=dm%40etersoft.ru">Мои&nbsp;задачи</a></li>
+
+            <li><span class="separator">| </span>
+            <a href="http://bugs.etersoft.ru/buglist.cgi?cmdtype=runnamed&amp;namedcmd=%D0%98%D0%BD%D0%B8%D1%86%D0%B8%D0%B0%D1%82%D0%BE%D1%80">Инициатор</a></li>
+            <li><span class="separator">| </span>
+            <a href="http://bugs.etersoft.ru/buglist.cgi?cmdtype=runnamed&amp;namedcmd=%D0%9E%D1%82%D1%81%D0%BB%D0%B5%D0%B6%D0%B8%D0%B2%D0%B0%D0%B5%D0%BC%D1%8B%D0%B5">Отслеживаемые</a></li>
+            <li><span class="separator">| </span>
+            <a href="http://bugs.etersoft.ru/buglist.cgi?cmdtype=runnamed&amp;namedcmd=%D0%9F%D1%80%D0%B8%D1%91%D0%BC%D0%BA%D0%B0">Приёмка</a></li>
+            <li><span class="separator">| </span>
+            <a href="http://bugs.etersoft.ru/buglist.cgi?cmdtype=runnamed&amp;namedcmd=%D0%A0%D0%B5%D1%88%20%D0%9F%D1%80%D0%B8%20%D0%97%D0%B0%D0%BA%20%D0%92%D0%A7%D0%95%D0%A0%D0%90">Реш При Зак ВЧЕРА</a></li>
+            <li><span class="separator">| </span>
+            <a href="http://bugs.etersoft.ru/buglist.cgi?cmdtype=runnamed&amp;namedcmd=%D0%A0%D0%B5%D1%88%20%D0%9F%D1%80%D0%B8%20%D0%97%D0%B0%D0%BA%20%D0%A1%D0%95%D0%93%D0%9E%D0%94%D0%9D%D0%AF">Реш При Зак СЕГОДНЯ</a></li>
+            <br>
+          <li>
+            <a href="http://bugs.etersoft.ru/buglist.cgi?cmdtype=dorem&amp;remaction=run&amp;namedcmd=%D0%92%D1%81%D0%B5%20%D0%BF%D0%BE%D0%B2%D1%81%D0%B5%D0%B4%D0%BD%D0%B5%D0%B2%D0%BD%D1%8B%D0%B5&amp;sharer_id=2" class="shared" title="Опубликован пользователем Vitaly Lipatov &lt;lav@etersoft.ru&gt;">Все&nbsp;повседневные</a></li>
+          <li><span class="separator">| </span>
+            <a href="http://bugs.etersoft.ru/buglist.cgi?cmdtype=dorem&amp;remaction=run&amp;namedcmd=%D0%92%D1%87%D0%B5%D1%80%D0%B0%D1%88%D0%BD%D0%B8%D0%B5&amp;sharer_id=2" class="shared" title="Опубликован пользователем Vitaly Lipatov &lt;lav@etersoft.ru&gt;">Вчерашние</a></li>
+          <li><span class="separator">| </span>
+            <a href="http://bugs.etersoft.ru/buglist.cgi?cmdtype=dorem&amp;remaction=run&amp;namedcmd=%D0%94%D0%B2%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%D1%87%D0%B5%D1%80%D0%B0&amp;sharer_id=2" class="shared" title="Опубликован пользователем Vitaly Lipatov &lt;lav@etersoft.ru&gt;">Движение&nbsp;вчера</a></li>
+          <li><span class="separator">| </span>
+            <a href="http://bugs.etersoft.ru/buglist.cgi?cmdtype=dorem&amp;remaction=run&amp;namedcmd=%D0%94%D0%B2%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%D0%B5%D0%B3%D0%BE%D0%B4%D0%BD%D1%8F&amp;sharer_id=2" class="shared" title="Опубликован пользователем Vitaly Lipatov &lt;lav@etersoft.ru&gt;">Движение&nbsp;сегодня</a></li>
+          <li><span class="separator">| </span>
+            <a href="http://bugs.etersoft.ru/buglist.cgi?cmdtype=dorem&amp;remaction=run&amp;namedcmd=%D0%9D%D0%B8%D1%87%D0%B5%D0%B9%D0%BD%D1%8B%D0%B5&amp;sharer_id=2" class="shared" title="Опубликован пользователем Vitaly Lipatov &lt;lav@etersoft.ru&gt;">Ничейные</a></li>
+          <li><span class="separator">| </span>
+            <a href="http://bugs.etersoft.ru/buglist.cgi?cmdtype=dorem&amp;remaction=run&amp;namedcmd=%D0%A1%D0%B5%D0%B3%D0%BE%D0%B4%D0%BD%D1%8F%D1%88%D0%BD%D0%B8%D0%B5&amp;sharer_id=2" class="shared" title="Опубликован пользователем Vitaly Lipatov &lt;lav@etersoft.ru&gt;">Сегодняшние</a></li>
+      </ul>
+    </li>
+
+  
+<li id="links-special">
+    <script type="text/javascript">
+      <!--
+      function update_text() {
+        // 'lob' means list_of_bugs.
+        var lob_action = document.getElementById('lob_action');
+        var action = lob_action.options[lob_action.selectedIndex].value;
+        var text = document.getElementById('lob_direction');
+        var new_query_text = document.getElementById('lob_new_query_text');
+
+        if (action == "add") {
+          text.innerHTML = "to";
+          new_query_text.style.display = 'inline';
+        }
+        else {
+          text.innerHTML = "from";
+          new_query_text.style.display = 'none';
+        }
+      }
+
+      function manage_old_lists() {
+        var old_lists = document.getElementById('lob_oldqueryname');
+        // If there is no saved searches available, returns.
+        if (!old_lists) return;
+
+        var new_query = document.getElementById('lob_newqueryname').value;
+
+        if (new_query != "") {
+          old_lists.disabled = true;
+        }
+        else {
+          old_lists.disabled = false;
+        }
+      }
+      //-->
+    </script>
+
+    <div class="label"></div>
+    <ul class="links"><li class="form">
+      <form id="list_of_bugs" action="buglist.cgi" method="get">
+        <input name="cmdtype" value="doit" type="hidden">
+        <input name="remtype" value="asnamed" type="hidden">
+        <input name="list_of_bugs" value="1" type="hidden">
+        <input name="token" value="1391165800-06ef7131bff8adbdcfe277c38c203a76" type="hidden">        
+        <select id="lob_action" name="action" onchange="update_text();">
+          <option selected="selected" value="add">Добавить</option>
+        </select>
+
+          <a href="http://bugs.etersoft.ru/docs/html/query.html#individual-buglists">именованный список</a>
+
+        <span id="lob_new_query_text">
+          <input class="txt" id="lob_newqueryname" size="20" maxlength="64" name="newqueryname" onkeyup="manage_old_lists();" type="text">
+        </span>
+        <span id="lob_direction">из</span>
+        задач
+        <input name="bug_ids" size="12" maxlength="80" value="9317" type="text">
+        <input value="Сохранить" id="commit_list_of_bugs" type="submit">
+      </form>
+    </li></ul>
+  </li>
+
+  
+</ul>
+
+  <div class="outro"></div>
+</div>
+
+
+
+</body></html>

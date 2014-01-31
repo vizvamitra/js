@@ -13,6 +13,9 @@
 
     var severity = document.getElementById('bug_severity');
     var priority = document.getElementById('priority');
+    
+    var comments = document.getElementsByClassName('bz_comment');
+    var num=0;
 
     function onFocus() {
 
@@ -37,7 +40,7 @@
 
         keypressed = keypressed || window.event;
 
-        function selectElement(w, select) {
+        function selectelement(w, select) {
             w.value = select;
         }
 
@@ -53,34 +56,44 @@
             p4: 52, // priority
             p5: 53, // priority
         };
-
+        
         if (keypressed.altKey) {
             if (keyCode == kn.save && commit_top !== null) {
                 commit_top.click();
-            }
-
-            var key_str;
-            if (priority !== null) {
-                switch (keyCode) {
-                    case kn.p1:
-                        key_str = "P1";
-                        break;
-                    case kn.p2:
-                        key_str = "P2";
-                        break;
-                    case kn.p3:
-                        key_str = "P3";
-                        break;
-                    case kn.p4:
-                        key_str = "P4";
-                        break;
-                    case kn.p5:
-                        key_str = "P5";
-                        break;
+            } else if (keyCode >= kn.p1 && keyCode <= kn.p5){
+                var key_str;
+                if (priority !== null) {
+                    switch (keyCode) {
+                        case kn.p1:
+                            key_str = "P1";
+                            break;
+                        case kn.p2:
+                            key_str = "P2";
+                            break;
+                        case kn.p3:
+                            key_str = "P3";
+                            break;
+                        case kn.p4:
+                            key_str = "P4";
+                            break;
+                        case kn.p5:
+                            key_str = "P5";
+                            break;
+                    }
                 }
+                selectelement(priority, key_str);
+                severity.focus();
+            } else if (keyCode == kn.up || keyCode == kn.down){
+                switch (keyCode){
+        			case kn.down: num+=1; break; //down arrow
+        			case kn.up: num-=1; break; //up arrow
+        		}
+
+    			if (num >= comments.length) num = 0;
+    			if (num < 0) num = comments.length - 1;
+    
+    			comments[num].scrollIntoView();
             }
-            selectElement(priority, key_str);
-            severity.focus();
             // added focus on
             // bug severity
 
@@ -111,5 +124,4 @@
     // PROBLEM = I DON'T KNOW: how to call this functions 
     // when page would be loaded at all 
     // (with window.onload)
-
 })();
